@@ -1,0 +1,118 @@
+[
+    {
+        "id": 1,
+        "name": "Développé couché classique",
+        "englishName": "Bench press",
+        "group": "Developpé couché",
+        "description": "Allongé sur un banc, pieds au sol, saisissez la barre avec une prise légèrement plus large que les épaules. En inspirant, descendez la barre jusqu'à la poitrine en gardant les coudes près du corps. Poussez la barre vers le haut jusqu'à l'extension complète des bras en expirant en fin d'effort.  \nUne prise serrée  augmentera le travail sur la partie centrale des pectoraux alors qu'une prise écarté augmentera le travail sur la partie externe des pectoraux. \nRapprocher les coudes du corps concentrera le travail sur les deltoides antérieurs alors que les éloigner du corps concentrera le travail sur les triceps. \nIl est possible de lever les jambes pour concentrer le travail sur le haut des pectoraux en augmentant la difficulté mais réduisant le risque de douleurs au bas du dos. \nOn peut aussi accentuer la cambrure du dos pour soulever plus lourd en augmentant la sollicitation du bas des pectoraux plus puissant mais cela augmente le risque de blessure au dos. \nAttention à bien saisir la barre en plaçant les pouces en opposition aux autres doigts pour éviter les chutes.",
+        "difficulty": 2,
+        "type": "Barre",
+        "variantes": [
+            2,
+            3,
+            4,
+            5
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+           "deltoideAnt",
+            "denteleAnt"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Développé couché incliné",
+        "englishName": "Incline bench press",
+        "group": "Developpé couché",
+        "description": "Allongé sur un banc incliné à 45°, pieds au sol, saisissez la barre avec une prise légèrement plus large que les épaules. Descendez la barre jusqu'à la poitrine en gardant les coudes près du corps. Poussez la barre vers le haut jusqu'à l'extension complète des bras.",
+        "difficulty": 3,
+        "type": "Barre",
+        "variantes": [
+            1,
+            3,
+            4,
+            5
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "deltoideAnt",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+          
+            "denteleAnt"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Développé couché décliné",
+        "englishName": "Decline bench press",
+        "group": "Developpé couché",
+        "description": "Allongé sur un banc décliné à 30°, pieds au sol, saisissez la barre avec une prise légèrement plus large que les épaules. Descendez la barre jusqu'à la poitrine en gardant les coudes près du corps. Poussez la barre vers le haut jusqu'à l'extension complète des bras.",
+        "difficulty": 2,
+        "type": "Barre",
+        "variantes": [
+            1,
+            2,
+            4,
+            5
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+           "deltoideAnt",
+            "denteleAnt"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Développé couché avec haltères",
+        "englishName": "Dumbbell bench press",
+        "group": "Developpé couché",
+        "description": "Allongé sur un banc, pieds au sol, saisissez les haltères avec une prise légèrement plus large que les épaules. Descendez les haltères jusqu'à la poitrine en gardant les coudes près du corps. Poussez les haltères vers le haut jusqu'à l'extension complète des bras.",
+        "difficulty": 3,
+        "type": "Haltères",
+        "variantes": [
+            1,
+            2,
+            3,
+            5
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+           "deltoideAnt",
+            "denteleAnt"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Développé couché à la machine convergente",
+        "englishName": "Machine bench press",
+        "group": "Developpé couché",
+        "description": "Allongé sur un banc, pieds au sol, saisissez les poignées de la machine avec une prise légèrement plus large que les épaules. Descendez les poignées jusqu'à la poitrine en gardant les coudes près du corps. Poussez les poignées vers le haut jusqu'à l'extension complète des bras.",
+        "difficulty": 1,
+        "type": "Machine",
+        "variantes": [
+            1,
+            2,
+            3,
+            4
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+           "deltoideAnt"
+          
+        ]
+    }
+]

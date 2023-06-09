@@ -1,0 +1,669 @@
+[
+        {
+        "id": 1,
+        "name": "Pompes classiques",
+        "group": "Pompes",
+        "type" : "Corps",
+        "difficulty": 2,
+        "description": "Commencez en position de planche, les mains légèrement plus larges que les épaules. Pliez les coudes et abaissez votre corps jusqu'à ce que votre poitrine touche le sol. Revenez à la position initiale en poussant le sol. Surout partie centrale et haute du grand pectoral est sollicitée. \n Tournez les mains vers l'intérieur pour accentué plus sur les triceps et les mains droites ou vers l'extérieur pour accentuer plus sur les pectoraux.\n Les mains plus haute que les épaules augmente le travail des pectoraux et notamment le bas alors que les mains plus basse que les épaules augmente le travail des deltoïdes et le haut du pectorals.",
+        "variantes": [
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Pompes inclinées",
+        "group": "Pompes",
+        "type" : "Corps",
+        "difficulty": 1,
+        "description": "Pour les débutants, les pompes inclinées sont plus faciles à réaliser. Placez vos mains sur un banc ou une chaise ou même contre un mur. Le bas du grand pectoral est plus sollicité.",
+        "variantes": [
+            1,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+        ],
+        "primaryMuscles": [
+            
+            "pectoralStero",
+            "pectoralAbdo",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "pectoralClav",
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Pompes déclinées",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 3,
+        "description": "Pour les plus avancés, les pompes déclinées sont plus difficiles à réaliser. Placez vos pieds sur un banc ou une chaise. Les deltoïdes antérieurs sont plus sollicités.",
+        "variantes": [
+            1,
+            2,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10,
+            11,
+            12,
+            13
+        ],
+        "primaryMuscles": [
+            "pectoralStero",
+            "pectoralClav",
+            "deltoideAnt",
+            "Muscle triceps brachial"
+            
+        ],
+        "secondaryMuscles": [
+            "pectoralAbdo",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Pompes diamant",
+        "group": "Pompes",
+        "difficulty": 3,
+        "type" : "Corps",
+
+        "description": "Pour les plus avancés, les pompes diamant sont plus difficiles à réaliser. Placez vos mains l'une sur l'autre pour former un diamant. Les triceps et la partie centrale (sternale) des pectoraux sont plus sollicités.",
+        "variantes": [
+            1,
+            2,
+            3,
+            5,
+            6
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Pompes écartées",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 3,
+        "description": "Pour les plus avancés, les pompes écartées sont plus difficiles à réaliser. Placez vos mains plus larges que les épaules. Les deltoïdes antérieurs et la partie externe (claviculaire) des pectoraux sont plus sollicités.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            6
+        ],
+        "primaryMuscles": [
+            "deltoideAnt",
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Pompes claquées",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 4,
+        "description": "Pour les plus avancés, les pompes claquées sont plus difficiles à réaliser. Poussez sur le sol avec suffisamment de force pour que vos mains quittent le sol et que vous puissiez applaudir en l'air.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 7,
+        "name": "Pompes serrées",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 3,
+        "description": "Pour les plus avancés, les pompes serrées sont plus difficiles à réaliser. Placez vos mains plus proches que les épaules. Travail plus les triceps et la partie centrale (sternale) des pectoraux",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 8,
+        "name": "Pompes à genoux",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 1,
+        "description": "Pour les débutants, les pompes à genoux sont plus faciles à réaliser. Placez vos genoux au sol.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 9,
+        "name": "Pompes sautées",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 4,
+        "description": "Pour les plus avancés, les pompes sautées sont plus difficiles à réaliser. Sautez en l'air en poussant très rapidement sur le sol pour faire décoller vos mains et vos pieds du sol. Réceptionnez-vous en position de pompes et recommencez.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 10,
+        "name": "Pompes en archer",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 4,
+        "description": "Pour les plus avancés, les pompes en archer sont plus difficiles à réaliser. Placez une main plus loin que l'autre. Travail plus accentué sur le bras le plus proche. Faites attention à bien rester gainer, à ne pas cambrer le dos et à ne pas trop tourner le buste.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id" : 11,
+        "name": "Pompes à une main",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 5,
+        "description": "Pour les plus avancés, les pompes à une main sont plus difficiles à réaliser. Placez une main sur le dos. Travail plus accentué sur le bras le plus proche. Faites attention à bien rester gainer, à ne pas cambrer le dos et à ne pas trop tourner le buste.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id" : 12,
+        "name": "Pompes en équilibre contre un mur",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 4,
+        "description": "Pour les plus avancés, les pompes en équilibre sont plus difficiles à réaliser. Placez en position d'équilibre sur les mains contre un mur. Descendez le plus bas possible et remontez.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "primaryMuscles": [
+            "trapezeSup",
+            "trapezeMoy",
+            "deltoideAnt",
+            "deltoideMoy",
+            "Muscle triceps brachial",
+            "pectoralClav"
+        ],
+        "secondaryMuscles": [
+            "pectoralAbdo",
+            "pectoralSterno",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id" : 13,
+        "name": "Pompes en équilibre sur les mains",
+        "group": "Pompes",
+        "type" : "Corps",
+
+        "difficulty": 5,
+        "description": "Pour les plus avancés, les pompes en équilibre sont plus difficiles à réaliser. Placez en position d'équilibre sur les mains. Descendez le plus bas possible et remontez.",
+        "variantes": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7
+        ],
+        "primaryMuscles": [
+            "Muscle trapèze",
+            "Muscle deltoïde",
+            "Muscle triceps brachial",
+            "pectoralClav",
+            "pectoralSterno"
+         ],
+        "secondaryMuscles": [
+            "pectoralAbdo",
+            "denteléAnt",
+            "droitAbdo"
+        ]
+    },
+    {
+        "id": 14,
+        "name": "Squats classique",
+        "group" : "Squats",
+        "type" : "Corps",
+
+        "difficulty" : 1,
+        "description": "Debout, pieds écartés à la largeur des épaules, descendez en pliant les genoux et en poussant les hanches vers l'arrière, comme si vous étiez assis sur une chaise. Gardez le dos droit et les genoux alignés avec les orteils. Revenez à la position debout. En descendant plus bas, on travaille plus les fessiers mais attention à ne pas trop cambrer le dos. Dépendant beaucoup de la souplesse des chevilles et de la longueur des cuisses, il est possible de ne pas descendre plus bas que les cuisses parallèles au sol ou de mettre des calles sur les talons pour moins incliner le buste vers l'avant.",
+        "variantes": [
+            15,
+            16
+        ],
+        "primaryMuscles": [
+            "fessiers",
+            "quadriceps"
+        ],
+        "secondaryMuscles": [
+            "ischioJambiers",
+            "adducteurs",
+            "droitAbdo",
+            "oblique",
+            "erecteurRachis"
+        ]
+    },
+    {
+        "id" : 15,
+        "name" : "Squats sumo",
+        "group" : "Squats",
+        "type" : "Corps",
+
+        "difficulty" : 2,
+        "description" : "Plus large que la largeur des épaules, les pieds sont tournés vers l'extérieur. Travail plus les adducteurs",
+        "variantes" : [
+            14,
+            16
+        ],
+        "primaryMuscles": [
+            "fessiers",
+            "adducteurs",
+            "quadriceps"
+        ],
+        "secondaryMuscles": [
+            "ischioJambiers",
+            "droitAbdo",
+            "oblique",
+            "erecteurRachis"
+        ]
+    },
+    {
+        "id" : 16,
+        "name" : "Squats sautés",
+        "group" : "Squats",
+        "type" : "Corps",
+
+        "difficulty" : 2,
+        "description" : "Pour les plus avancés, les squats sautés sont plus difficiles à réaliser. Sautez en l'air en poussant sur vos jambes et en tendant vos bras vers le haut.",
+        "variantes" : [
+            14,
+            15
+        ],
+        "primaryMuscles": [
+            "fessiers",
+            "quadriceps"
+        ],
+        "secondaryMuscles": [
+            "ischioJambiers",
+            "adducteurs",
+            "droitAbdo",
+            "oblique",
+            "erecteurRachis"
+        ]
+    },
+    {
+        "id": 17,
+        "name": "Traction classique",
+        "group" : "Tractions",
+        "type" : "Corps",
+
+        "difficulty" : 3,
+        "description": "Suspendez-vous à une barre de traction, les mains en prise pronation (paume vers l'extérieur). Bombez le torse en rapprochant les homoplates. Tirez votre corps vers le haut en pliant les coudes jusqu'à ce que votre menton dépasse la barre. Travail plus les fibres supérieurs et centrales du grand dorsal ainsi que le grand rond, un peu plus romboïdes et trapèze inférieur -> Epaissi le dos",
+        "variantes": [
+            18, 19, 20
+        ],
+        "primaryMuscles": [
+            "Muscle biceps brachial",
+            "Muscle grand dorsal"
+
+        ],
+        "secondaryMuscles": [
+            "trapezeMoy",
+            "trapezeInf",
+            "grandRond",
+            "rhomboids",
+            "tricepsLong"
+        ]
+    },
+    {
+        "id" : 18,
+        "name" : "Tractions en supination",
+        "group" : "Tractions",
+        "type" : "Corps",
+
+        "difficulty" : 3,
+        "description" : "Suspendez-vous à une barre de traction, les mains en prise supination (paume vers l'intérieur). Tirez votre corps vers le haut en pliant les coudes jusqu'à ce que votre menton dépasse la barre. Accentue l'effort sur les biceps",
+        "variantes" : [
+            17, 19, 20
+        ],
+        "primaryMuscles" : [
+            "Muscle biceps brachial",
+            "Muscle grand dorsal"
+        ],
+        "secondaryMuscles" : [
+            "trapezeMoy",
+            "trapezeInf",
+            "tricepsLong"
+        ]
+
+    },
+    {
+        "id" : 19,
+        "name" : "Traction nuque",
+        "group" : "Tractions",
+        "type" : "Corps",
+
+        "difficulty" : 4,
+        "description" : "Suspendez-vous à une barre de traction, les mains en prise pronation (paume vers l'extérieur). Tirez votre corps vers le haut en pliant les coudes jusqu'à ce que votre menton dépasse la barre. Ramenez la barre derrière la nuque. Travail plus les fibres externes du grand dorsal -> Elargi le dos",
+        "variantes" : [
+            17, 18, 20
+        ],
+        "primaryMuscles" : [
+            "Muscle biceps brachial",
+            "Muscle grand dorsal"
+        ],
+        "secondaryMuscles" : [
+            "trapezeMoy",
+            "trapezeInf",
+            "tricepsLong"
+        ]
+
+    },
+    {
+        "id": 20,
+        "name": "Dips",
+        "group" : "Dips",
+        "type" : "Corps",
+
+        "difficulty" : 3,
+        "description": "Placez-vous entre deux barres parallèles, soutenez votre poids sur les paumes de vos mains. Descendez en pliant les coudes jusqu'à ce qu'ils forment un angle de 90 degrés. Revenez à la position initiale en poussant sur les barres. Surtout la partie basse du grand pectoral est sollicitée.",
+        "variantes": [
+            21,
+            22
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt"
+        ]
+    },
+    {
+        "id" : 21,
+        "name" : "Dips sur banc",
+        "group" : "Dips",
+        "type" : "Corps",
+
+        "difficulty" : 2,
+        "description" : "Pour les débutants, les dips sur banc sont plus faciles à réaliser. Placez vos pieds sur un banc ou une chaise. Travail plus les triceps",
+        "variantes" : [
+            20,
+            22
+        ],
+        "primaryMuscles" : [
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles" : [
+            "Muscle grand pectoral",
+            "deltoideAnt"
+        ]
+    },
+    {
+        "id" : 22,
+        "name" : "Dips sur une barre fixe",
+        "group" : "Dips",
+        "type" : "Corps",
+
+        "difficulty" : 3,
+        "description" : "Pour les plus avancés, les dips sur une barre fixe sont plus difficiles à réaliser. Placez-vous au dessus d'une barre fixe, les mains en pronation, les bras tendus. Descendez en pliant les coudes jusqu'à ce qu'ils forment un angle de 90 degrés. Revenez à la position initiale en poussant sur la barre, baisser le torse et la tête vers l'avant.",
+        "variantes" : [
+            20,
+            21
+        ],
+        "primaryMuscles": [
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles": [
+            "deltoideAnt"
+        ]
+    },
+    {
+        "id" : 23,
+        "name" : "Pistol Squat",
+        "group" : "Squats",
+        "type" : "Corps",
+
+        "difficulty" : 4,
+        "description" : "Le pistol squat est un squat sur une jambe. Tendez une jambe devant vous et descendez en pliant la jambe de travail. Travail plus les quadriceps",
+        "variantes" : [
+            14,
+            15,
+            16
+        ],
+        "primaryMuscles" : [
+            "quadriceps",
+            "fessiers"
+        ],
+        "secondaryMuscles" : [
+            "ischioJambiers",
+            "adducteurs",
+            "droitAbdo",
+            "oblique",
+            "erecteurRachis"
+        ]
+    },
+    {
+        "id": 24,
+        "name" : "Planche",
+        "group" : "Abdos",
+        "type" : "Corps",
+
+        "difficulty" : 2,
+        "description" : "Allongez-vous sur le ventre, les coudes au sol, les avant-bras à plat. Levez le bassin et maintenez la position.",
+        "variantes" : [
+            25, 26
+        ],
+        "primaryMuscles" : [
+            "droitAbdo",
+            "obliques"
+        ],
+        "secondaryMuscles" : [
+            "Muscle trapèze",
+            "deltoideAnt",
+            "Muscle grand pectoral",
+            "rhomboids",
+            "fessiers",
+            "quadriceps"
+        ]
+    },
+
+    {
+        "id" : 25,
+        "name" : "Planche latérale",
+        "group" : "Abdos",
+        "type" : "Corps",
+
+        "difficulty" : 2,
+        "description" : "Allongez-vous sur le côté, le coude au sol, l'avant-bras à plat. Levez le bassin et maintenez la position. Travail plus les abdominaux obliques",
+        "variantes" : [
+            24, 26
+        ],
+        "primaryMuscles" : [
+            "obliques"
+        ],
+        "secondaryMuscles" : [
+            "fessiers",
+            "adducteurs",
+            "quadriceps",
+            "ischioJambiers"
+        ]
+    },
+    {
+        "id" : 26,
+        "name" : "Planche militaire",
+        "group" : "Abdos",
+        "type" : "Corps",
+
+        "difficulty" : 3,
+        "description" : " Mettez vous en position de planche puis montez sur les mains et recommencez",
+        "variantes" : [
+            24, 25
+        ],
+        "primaryMuscles" : [
+            "droitAbdo",
+            "obliques",
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
+        ],
+        "secondaryMuscles" : [
+            "Muscle trapèze",
+            "deltoideAnt",
+            "rhomboids",
+            "erecteurRachis",
+            "fessiers",
+            "quadriceps"
+        ]
+    }
+]

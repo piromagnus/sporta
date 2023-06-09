@@ -1,0 +1,50 @@
+[
+    {
+        "name" : "Le début de l'aventure",
+        "desc" : "Créer une séance personalisée",
+        "requirements" : [] ,
+        "rewards" : [] ,
+        "generalProgression" : null,
+        "generalState" : "unlocked"
+    },
+
+    {
+        "name" : "Au boulot !",
+        "desc" : "Effectuer une séance que vous avez créée",
+        "requirements" : ["Le début de l'aventure"] ,
+        "rewards" : [] ,
+        "generalProgression" : null,
+        "generalState" : "locked"
+    },
+    {
+        "name" : "La séance de test",
+        "desc" : "Effectuer la séance de calibrage.",
+        "requirements" : [] ,
+        "rewards" : [] ,
+        "generalProgression" : null,
+        "generalState" : "unlocked"
+    },
+    {
+        "name" : "Il faut plannifier",
+        "desc" : "Ajouter une séance au calendrier",
+        "requirements" : [] ,
+        "rewards" : [] ,
+        "generalProgression" :null ,
+        "generalState" : "unlocked"
+    },
+    {
+        "name" : "Le début de la régularité",
+        "desc" : "Effectuer 2 séances de plus de 15 minutes en 2 jours différents dans la même semaine",
+        "requirements" : ["Au boulot ! "] ,
+        "rewards" : [] ,
+        "generalProgression" : null,
+        "generalState" : "locked"
+    },
+    {
+        "name" : "Les premières perfs",
+        "desc" : "Soulever au moins 1000kg en une séance",
+        "requirements" : [] ,
+        "rewards" : [] ,
+        "generalProgression" : null,
+        "generalState" : "locked"
+    },

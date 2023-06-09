@@ -1,0 +1,388 @@
+[
+  {
+    "iD" : 1,
+    "id" : "trapeze",
+    "name": "Trapèze",
+    "path" : "assets/musclesImg/trapezius.png",
+    "englishName": "Trapezius",
+    "scientificName": "Musculus trapezius",
+    "desc": "Muscle en forme de trapèze situé au niveau du cou et dans le haut du dos",
+    "actions" :[
+      "Élévation de l'épaule",
+      "Rotation de la tête",
+      "Extension de la tête",
+      "Inclinaison latérale de la tête",
+      "Adduction de la scapula",
+      "Rotation de la scapula",
+      "Abaissement de l'épaule"
+    ],
+    "antagonistId": [
+     "denteleAnt",
+     "pectoral"
+    ],
+    "muscle" : "Muscle trapèze",
+    "group": "Dos"
+  },
+
+  {
+    "iD": 2,
+    "id": "deltoide",
+    "name": "Deltoïde ",
+    "path" : "assets/musclesImg/deltoids.gif",
+    "englishName": "Deltoid",
+    "scientificName": "Musculus deltoideus",
+    "desc": "Muscle triangulaire de l'épaule",
+    "actions" : [
+      "Flexion du bras",
+      "Rotation latérale du bras",
+      "Antépulsion de l'épaule",
+      "Abduction du bras",
+      "Extenseur du bras",
+      "Rotation latérale du bras",
+      "Rétropulsion de l'épaule"
+    ],
+    "antagonistId": [
+     "grandDorsal",
+     "grandRond",
+     "pectoral" 
+    ],
+    "muscle" : "Muscle deltoïde",
+    "group": "Épaule"
+  },
+  {
+    "iD" :3,
+    "id": "pectoral",
+    "name": "Grand pectoral",
+    "path" : "assets/musclesImg/pectoralisMajor.png",
+    "englishName": "Pectoralis major ",
+    "scientificName": "Musculus pectoralis major",
+    "desc": "Muscle large situé sur la partie antérieure de la poitrine au niveau de la clavicule.",
+    "actions" :[
+      "Flexion du bras",
+      "Adduction du bras",
+      "Rotation du bras."
+    ],
+    "antagonistId": [
+      "deltoide",
+      "trapeze"
+    ],
+    "muscle" : "Muscle grand pectoral",
+    "group": "Torse"
+  },
+
+
+  {
+    "iD" :4,
+    "id": "bicepsBrach",
+    "name": "Biceps brachial",
+    "path" : "assets/musclesImg/bicepsBrachii.gif",
+    "englishName": "Biceps brachii",
+    "scientificName": "Musculus biceps brachii",
+    "desc": "Muscle à deux têtes situé sur la face antérieure du bras. Il est responsable de la flexion de l'avant-bras avec le muscle brachial, de la supination de l'avant-bras et de la flexion du bras. ",
+    "antagonistId": [
+      "triceps"
+    ],
+    "muscle" : "Muscle biceps brachial",
+    "group": "Bras"
+  },
+  {
+    "id": "brachial",
+    "name": "Brachial",
+    "path" : "assets/musclesImg/brachial.gif",
+    "englishName": "Brachialis muscle",
+    "scientificName": "Musculus brachialis",
+    "desc": "Muscle situé sous le biceps brachial, responsable de la flexion de l'avant-bras. C'est le plus puissant fléchisseur de l'avant-bras au niveau du coude.",
+    "antagonistId": [
+      "triceps"
+    
+    ],
+    "muscle" : "Muscle brachial",
+    "group": "Bras"
+  },
+
+
+  { 
+    "iD" : 5,
+    "id": "triceps",
+    "name": "Triceps ",
+    "path" : "assets/musclesImg/tricepsBrachii.gif",
+    "englishName": "Triceps brachii",
+    "scientificName": "Musculus triceps brachii",
+    "desc": "Muscle à trois têtes situé sur la face postérieure du bras'",
+    "antagonistId": [
+      "bicepsBrach",
+      "brachial",
+      "brachioradial"
+    ],
+    "muscle" : "Muscle triceps brachial",
+    "group": "Bras"
+  },
+
+  {
+    "iD" : 6,
+    "id": "rhomboids",
+    "name": "Rhomboïdes",
+    "path" : "assets/musclesImg/rhomboids.png",
+    "englishName": "Rhomboids",
+    "scientificName": "Musculus rhomboidei",
+    "desc": "Muscles (le petit et le grand) situés entre les omoplates. Il sont responsables de l'adduction, l'élévation de la scapula er rotation médiale de la scapula. ",
+    "actions" :[
+      "Adduction de l'épaule",
+      "Élévation de l'épaule"
+    ],
+    "antagonistId": [
+      "denteleAnt"
+    ],
+    "muscle" : "Muscle rhomboïde",
+    "group": "Dos"
+  },
+  {
+    "iD" : 7,
+    "id": "grandDorsal",
+    "name": "Grand dorsal",
+    "path" : "assets/musclesImg/latissimusDorsi.png",
+    "englishName": "Latissimus dorsi",
+    "scientificName": "Musculus latissimus dorsi",
+    "desc": "Muscle large situé sur la partie postérieure du tronc",
+    "actions": [
+      "Extension du bras",
+      "Adduction du bras",
+      "élévation du bassin",
+      "inclinaison latérale du tronc"
+    ],
+    "antagonistId": [
+      "deltoide",
+      "obliques",
+      "droitAbdo"
+    ],
+    "muscle" : "Muscle grand dorsal",
+    "group": "Dos"
+  },
+  {
+    "id": "grandRond",
+    "name": "Grand Rond",
+    "path" : "assets/musclesImg/teresMajor.gif",
+    "englishName": "Teres Major",
+    "scientificName": "Musculus Teres Major",
+    "desc": "Muscle situé sous le grand dorsal, responsable de l'adduction, l'extension et la rotation médiale de l'épaule.",
+    "actions" : [
+      "Adduction du bras",
+      "Extension du bras"
+    ],
+    "antagonistId": [
+      "deltoide",
+      "pectoral"
+    ],
+    "muscle" : "Muscle dentelé antérieur",
+    "group": "Torse"
+  },
+  {
+    "iD": 8,
+    "id": "denteleAnt",
+    "name": "Dentelé antérieur",
+    "path" : "assets/musclesImg/serratusAnterior.gif",
+    "englishName": "Serratus anterior",
+    "scientificName": "Musculus serratus anterior",
+    "desc": "Muscle en forme de dent situé au dessus des obliques sur les côtes et sous le grand dorsal ",
+    "actions" : [
+      "Abaissement de l'épaule",
+      "Abduction de l'épaule"
+    ],
+    "antagonistId": [
+      "trapeze",
+      "rhomboids"
+    ],
+    "muscle" : "Muscle dentelé antérieur",
+    "group": "Torse"
+  },
+  {
+    "iD": 9,
+    "id": "droitAbdo",
+    "name": "Droit de l'abdomen",
+    "path" : "assets/musclesImg/rectusAbdominis.png",
+    "englishName": "Rectus abdominis",
+    "scientificName": "Musculus rectus abdominis",
+    "desc": "Muscle long et plat situé sur la partie antérieure de l'abdomen, responsable de la flexion du tronc.",
+    "antagonistId": [
+      "erecteurRachis"
+    ],
+    "group": "Abdominaux"
+  },
+  {
+    "iD": 10,
+    "id": "obliques",
+    "name": "Obliques",
+    "path" : "assets/musclesImg/obliques.jpg",
+    "englishName": "Oblique",
+    "scientificName": "Musculus obliquus abdominis",
+    "desc": "Muscles diagonaux situés sur les côtés de l'abdomen, responsables de la flexion latérale et de la rotation du tronc, interne et externe",
+    "antagonistId": [
+      "obliques",
+      "grandDorsal"
+    ],
+    "group": "Abdominaux"
+  },
+  {
+    "iD": 11,
+    "id": "erecteurRachis",
+    "name": "Érecteurs du rachis",
+    "path" : "assets/musclesImg/erectorSpinae.png",
+    "englishName": "Erector spinae",
+    "scientificName": "Musculi erector spinae",
+    "desc": "Groupe de muscles situés le long de la colonne vertébrale, responsables de l'extension et de la rotation du tronc.",
+    "antagonistId": [
+      "droitAbdo"
+    ],
+    "group": "Dos"
+  },
+  {
+    "iD": 12,
+    "id": "flechisseursMain",
+    "name": "Les fléchisseurs de la main",
+    "path" : "assets/musclesImg/antebrachium.png",
+    "englishName": "Antebrachium",
+    "scientificName": "Antebrachium",
+    "desc": "Ensemble de muscles fléchisseurs situé majoritairement sur la partie antérieur de l'avant-bras, responsable de la flexion du poignets et de l'avant-bras",
+    "actions" :[
+      "Flexion du poignet",
+      "Flexion des doigts"
+    ],
+    
+    "antagonistId": [
+      "extenseursMain"
+    ],
+    "group": "Avant-Bras"
+  },
+  {
+    "id": "extenseursMain",
+    "name": "Les extenseurs de la main",
+    "path" : "assets/musclesImg/antebrachium.png",
+    "englishName": "Antebrachium",
+    "scientificName": "Antebrachium",
+    "desc": "Ensemble de muscles extenseurs majoritairement situé sur la partie postérieur de la main.",
+    "actions" :[
+      "Extension du poignet",
+      "Extension des doigts"
+    ],
+    "antagonistId": [
+      "flechisseursMain"
+    ],
+    "group": "Avant-Bras"
+  },
+  {
+    "id": "brachioradial",
+    "name": "Brachio-radial",
+    "path" : "assets/musclesImg/brachioradial.png",
+    "englishName": "Brachioradialis muscle",
+    "scientificName": "Musculus brachioradialis",
+    "desc": "Muscle situé sur le dessus de l'avant bras en quand la main est en position neutre (paume vers le côté).",
+    "actions" :[
+      "Supination de l'avant-bras",
+      "Pronation de l'avant-bras",
+      "flexion de l'avant bras"
+    ],
+    "antagonistId": [
+      "triceps"
+    ],
+    "muscle" : "Muscle brachial",
+    "group": "Avant-Bras"
+  },
+
+
+  {
+    "iD": 13,
+    "id" : "iliopsoas",
+    "name": "Iliopsoas",
+    "path" : "assets/musclesImg/iliopsoas.png",
+    "englishName": "Iliopsoas",
+    "scientificName": "Musculus iliopsoas",
+    "desc": "Muscle profond de la hanche composé de deux muscles, le psoas et l'iliaque",
+    "actions" :[
+      "Flexion de la hanche",
+      "Rotation de la hanche"
+    ],
+    "antagonistId": [
+      "fessiers"
+    ],
+    "group": "Hanche"
+  },
+  {
+    "iD": 14,
+    "id": "fessiers",
+    "name": "Fessiers",
+    "path" : "assets/musclesImg/gluteusMaximus.gif",
+    "englishName": "Gluteal muscles",
+    "scientificName": "Musculus glutei",
+    "desc": "Groupe de trois muscles situés dans la région fessière, responsables de l'extension, l'abduction et la rotation de la hanche.",
+    "antagonistId": [
+      "iliopsoas",
+      "adducteurs"
+    ],
+    "group": "Hanche"
+  },
+  {
+    "iD": 15,
+    "id" : "adducteurs",
+    "name": "Adducteurs",
+    "path" : "assets/musclesImg/adductors.gif",
+    "englishName": "Adductors",
+    "scientificName": "Musculus adductores",
+    "desc": "Groupe de muscles situés sur la face interne de la cuisse, responsables de l'adduction de la hanche.",
+    "antagonistId": [
+      "fessiers"
+    ],
+    "group": "Cuisse"
+  },
+ 
+  {
+    "iD": 16,
+    "id": "quadriceps",
+    "name": "Quadriceps",
+    "path" : "assets/musclesImg/quadriceps.gif",
+    "englishName": "Quadriceps femoris",
+    "scientificName": "Musculus quadriceps femoris",
+    "desc": "Groupe de quatre muscles situés sur la face antérieure de la cuisse, responsables de l'extension du genou. Droit de la cuisse, vaste latéral, médial, intermédiaire",
+    "antagonistId": [
+      "ischioJambiers"
+    ],
+    "group": "Cuisse"
+  },
+  {
+    "iD": 17,
+    "id" : "ischioJambiers",
+    "name": "Ischio-jambiers",
+    "path" : "assets/musclesImg/hamstrings.gif",
+    "englishName": "Hamstrings",
+    "scientificName": "Musculus ischiocrurales",
+    "desc": "Groupe de deux muscles situés sur la face postérieure de la cuisse, responsables de la flexion du genou et de l'extension de la hanche.",
+    "antagonistId": [
+      "quadriceps"
+    ],
+    "group": "Cuisse"
+  },
+  {
+    "iD": 18,
+    "id": "mollet",
+    "name": "Mollet",
+    "englishName": "Triceps surae",
+    "path": "assets/musclesImg/calves.png",
+    "scientificName": "Musculus triceps surae",
+    "desc": "Groupe de 2 muscles, aussi appelé Triceps Sural, composé du muscle gastrocnémien, un muscle à deux têtes situé à l'arrière de la jambe sous lequel est situé le muscle soléaire. Ils sont responsables de la flexion plantaire et de la flexion du genou",
+    "antagonistId": [
+      "tibialAnt"
+    ],
+    "group": "Jambe"
+  },
+  {
+    "iD": 19,
+    "id" : "tibialAnt",
+    "name": "Tibial antérieur",
+    "englishName": "Tibialis anterior",
+    "scientificName": "Musculus tibialis anterior",
+    "desc": "Muscle situé à l'avant de la jambe, responsable de la flexion dorsale et de l'inversion du pied.",
+    "antagonistId": [
+      "mollet"
+    ],
+    "group": "Jambe"
+  }
+]

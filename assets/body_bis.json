@@ -1,0 +1,162 @@
+{
+    "id": 2,
+    "name": "Squats",
+    "description": "Debout, pieds écartés à la largeur des épaules, descendez en pliant les genoux et en poussant les hanches vers l'arrière, comme si vous étiez assis sur une chaise. Gardez le dos droit et les genoux alignés avec les orteils. Revenez à la position debout. En descendant plus bas, on travaille plus les fessiers mais attention à ne pas trop cambrer le dos. Dépendant beaucoup de la souplesse des chevilles et de la longueur des cuisses, il est possible de ne pas descendre plus bas que les cuisses parallèles au sol ou de mettre des calles sur les talons pour moins incliner le buste vers l'avant.",
+    "variantes": [
+        "Squats sumo : Plus large que la largeur des épaules, les pieds sont tournés vers l'extérieur. Travail plus les adducteurs",
+        "Squats sautés : Pour les plus avancés, les squats sautés sont plus difficiles à réaliser. Sautez en l'air en poussant sur vos jambes et en tendant vos bras vers le haut.",
+        "Squats isométriques : "
+    ],
+    "primaryMuscles": [
+        "Quadriceps",
+        "Fessiers"
+    ],
+    "secondaryMuscles": [
+        "Ischio-jambiers",
+        "Adducteurs",
+        "Érecteurs du rachis",
+        "Abdominaux"
+    ]
+},
+{
+    "id": 3,
+    "name": "Traction",
+    "description": "Suspendez-vous à une barre de traction, les mains en prise pronation ou supination. Tirez votre corps vers le haut en pliant les coudes jusqu'à ce que votre menton dépasse la barre. Redescendez lentement.",
+    "variantes": [
+        "Tractions en ramenant les bras au niveau du corps avec la barre derrière la nuque. : Travail plus les fibres externes du grand dorsal -> Elargi le dos",
+        "Tractions en ramenant les coudes en arrière bombant le torse : Travail plus les fibres supérieurs et centrales du grand dorsal ainsi que le grand rond, un peu plus romboïdes et trapèze inférieur -> Epaissi le dos",
+        "Tractions en supination : Travail plus les biceps"
+    ],
+    "primaryMuscles": [
+        "Grand Dorsal",
+        "Grand rond",
+        "Biceps"
+    ],
+    "secondaryMuscles": [
+        "Trapèzes",
+        "Rhomboides"
+    ]
+},
+{
+    "id": 4,
+    "name": "Dips",
+    "description": "Placez-vous entre deux barres parallèles, soutenez votre poids sur les paumes de vos mains. Descendez en pliant les coudes jusqu'à ce qu'ils forment un angle de 90 degrés. Revenez à la position initiale en poussant sur les barres. Surtout la partie basse du grand pectoral est sollicitée.",
+    "variantes": [
+        "Dips sur banc : Pour les débutants, les dips sur banc sont plus faciles à réaliser. Placez vos pieds sur un banc ou une chaise. Travail plus les triceps"
+    ],
+    "primaryMuscles": [
+        "Triceps",
+        "Grand Pectoral"
+    ],
+    "secondaryMuscles": [
+        "Deltoides"
+    ]
+},
+{
+    "id": 5,
+    "name": "Fentes",
+    "description": "Debout, faites un pas en avant avec un pied et pliez les deux genoux jusqu'à ce que le genou arrière frôle le sol. Le genou avant doit être aligné avec la cheville. Revenez à la position initiale et répétez avec l'autre jambe.",
+    "variantes": [
+        "Fentes latérales",
+        "Fentes arrière",
+        "Fentes en marchant"
+    ],
+    "primaryMuscles": [
+        "Quadriceps",
+        "Fessiers"
+    ],
+    "secondaryMuscles": [
+        "Ischio-jambiers",
+        "Adducteurs"
+    ]
+},
+{
+    "id": 6,
+    "name": "Soulevé de hanches",
+    "description": "Allongé sur le dos, les pieds à plat sur le sol et les genoux pliés, soulevez vos hanches en contractant les fessiers jusqu'à ce que votre corps forme une ligne droite des genoux aux épaules. Redescendez lentement.",
+    "variantes": [
+        "Soulevé de hanches sur une jambe",
+        "Soulevé de hanches avec élastique",
+        "Soulevé de hanches avec haltère"
+    ],
+    "primaryMuscles": [
+        "Fessiers",
+        "Ischio-jambiers"
+    ],
+    "secondaryMuscles": [
+        "Abdominaux",
+        "Lombaires"
+    ]
+},
+{
+    "id": 7,
+    "name": "Planche",
+    "description": "Placez-vous en position de planche sur les avant-bras, les coudes sous les épaules et les pieds joints. Contractez les abdominaux et maintenez le corps droit et aligné. Maintenez la position le temps souhaité.",
+    "variantes": [
+        "Planche latérale",
+        "Planche sur mains",
+        "Planche avec alternance de jambes"
+    ],
+    "primaryMuscles": [
+        "Abdominaux",
+        "Lombaires"
+    ],
+    "secondaryMuscles": [
+        "Deltoides",
+        "Quadriceps"
+    ]
+},
+{
+    "id": 8,
+    "name": "Mountain climbers",
+    "description": "En position de planche sur les mains, amenez rapidement un genou vers le coude du même côté. Revenez en position de planche et répétez avec l'autre jambe. Continuez en alternant les jambes.",
+    "variantes": [
+        "Mountain climbers croisés",
+        "Mountain climbers lents",
+        "Mountain climbers sautés"
+    ],
+    "primaryMuscles": [
+        "Abdominaux",
+        "Quadriceps"
+    ],
+    "secondaryMuscles": [
+        "Deltoides",
+        "Pectoraux"
+    ]
+},
+{
+    "id": 9,
+    "name": "Burpees",
+    "description": "Debout, accroupissez-vous, placez vos mains au sol, puis sautez en arrière pour atteindre la position de planche. Faites une pompe, ramenez les pieds près des mains en sautant, puis sautez en l'air en levant les bras. Répétez.",
+    "variantes": [
+        "Burpees sans pompe",
+        "Burpees avec rotation",
+        "Burpees avec traction"
+    ],
+    "primaryMuscles": [
+        "Quadriceps",
+        "Pectoraux"
+    ],
+    "secondaryMuscles": [
+        "Abdominaux",
+        "Deltoides"
+    ]
+},
+{
+    "id": 10,
+    "name": "Jumping jacks",
+    "description": "Debout, pieds joints et bras le long du corps, sautez en écartant les jambes et en levant les bras au-dessus de la tête. Sautez à nouveau pour revenir à la position de départ. Répétez rapidement.",
+    "variantes": [
+        "Jumping jacks à impulsion",
+        "Jumping jacks avec rotation",
+        "Jumping jacks croisés"
+    ],
+    "primaryMuscles": [
+        "Quadriceps",
+        "Deltoides"
+    ],
+    "secondaryMuscles": [
+        "Abdominaux",
+        "Mollets"
+    ]
+}

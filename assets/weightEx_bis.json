@@ -1,0 +1,137 @@
+[
+      {
+        "id": 1,
+        "name": {
+          "french": "Squat",
+          "english": "Squat"
+        },
+        "description": "Debout, pieds écartés à la largeur des épaules, barre sur les trapèzes, descendez en pliant les genoux et en poussant les hanches vers l'arrière, comme si vous étiez assis sur une chaise. Gardez le dos droit et les genoux alignés avec les orteils. Revenez à la position debout.",
+        "difficulty": 3,
+        "variantes": ["Squat avant", "Squat sumo", "Squat à la machine Smith"],
+        "primaryMuscles": ["Quadriceps", "Fessiers"],
+        "secondaryMuscles": ["Ischio-jambiers", "Adducteurs"]
+      },
+      {
+        "id": 2,
+        "name": {
+          "french": "Développé couché",
+          "english": "Bench press"
+        },
+        "description": "Allongé sur un banc, pieds au sol, saisissez la barre avec une prise légèrement plus large que les épaules. Descendez la barre jusqu'à la poitrine en gardant les coudes près du corps. Poussez la barre vers le haut jusqu'à l'extension complète des bras.",
+        "difficulty": 2,
+        "variantes": ["Développé couché incliné", "Développé couché décliné", "Développé couché avec haltères"],
+        "primaryMuscles": ["Pectoraux", "Triceps"],
+        "secondaryMuscles": ["Deltoides", "Biceps"]
+      },
+      {
+        "id": 3,
+        "name": {
+          "french": "Soulevé de terre",
+          "english": "Deadlift"
+        },
+        "description": "Debout, pieds écartés à la largeur des épaules, saisissez la barre avec une prise alternée ou pronation. Gardez le dos droit et les épaules en arrière. Levez la barre en redressant les jambes et en poussant les hanches vers l'avant. Redescendez la barre en contrôlant le mouvement.",
+        "difficulty": 4,
+        "variantes": ["Soulevé de terre roumain", "Soulevé de terre sumo", "Soulevé de terre à une jambe"],
+        "primaryMuscles": ["Ischio-jambiers", "Fessiers"],
+        "secondaryMuscles": ["Quadriceps", "Erecteurs spinaux"]
+      },
+   
+          {
+            "id": 4,
+            "name": {
+              "french": "Tirage vertical",
+              "english": "Lat pulldown"
+            },
+            "description": "Assis à une machine de tirage vertical, saisissez la barre avec une prise pronation ou supination légèrement plus large que les épaules. Tirez la barre vers la poitrine en contractant les dorsaux et en gardant les coudes près du corps. Revenez lentement à la position initiale.",
+            "difficulty": 2,
+            "variantes": ["Tirage vertical prise neutre", "Tirage vertical prise serrée", "Tirage vertical unilatéral"],
+            "primaryMuscles": ["Dorsaux", "Biceps"],
+            "secondaryMuscles": ["Rhomboides", "Trapèzes"]
+          },
+          {
+            "id": 5,
+            "name": {
+              "french": "Rowing barre",
+              "english": "Bent over row"
+            },
+            "description": "Debout, penché en avant avec le dos droit et les genoux légèrement fléchis, saisissez la barre avec une prise pronation légèrement plus large que les épaules. Tirez la barre vers le ventre en gardant les coudes près du corps. Revenez lentement à la position initiale.",
+            "difficulty": 3,
+            "variantes": ["Rowing unilatéral avec haltère", "Rowing T-bar", "Rowing machine Smith"],
+            "primaryMuscles": ["Dorsaux", "Biceps"],
+            "secondaryMuscles": ["Rhomboides", "Trapèzes"]
+          },
+          {
+            "id": 6,
+            "name": {
+              "french": "Curl biceps",
+              "english": "Biceps curl"
+            },
+            "description": "Debout, saisissez des haltères ou une barre avec une prise supination, les bras étendus le long du corps. Fléchissez les coudes en soulevant les poids vers les épaules. Revenez lentement à la position initiale.",
+            "difficulty": 1,
+            "variantes": ["Curl biceps concentré", "Curl biceps à la barre EZ", "Curl biceps incliné"],
+            "primaryMuscles": ["Biceps"],
+            "secondaryMuscles": ["Avant-bras", "Brachioradialis"]
+          },
+          {
+            "id": 7,
+            "name": {
+              "french": "Extensions triceps",
+              "english": "Triceps extension"
+            },
+            "description": "Assis ou debout, saisissez un haltère à deux mains ou une barre EZ derrière la tête, les coudes près des oreilles. Étendez les bras vers le haut en contractant les triceps. Revenez lentement à la position initiale.",
+            "difficulty": 2,
+            "variantes": ["Extensions triceps sur la tête avec poulie", "Extensions triceps sur banc incliné", "Extensions triceps avec haltères unilatéraux"],
+            "primaryMuscles": ["Triceps"],
+            "secondaryMuscles": ["Deltoides", "Anconé"]
+          },
+
+              {
+                "id": 8,
+                "name": {
+                  "french": "Élévations latérales",
+                  "english": "Lateral raises"
+                },
+                "description": "Debout, saisissez des haltères avec une prise neutre, les bras légèrement fléchis. Élevez les bras sur les côtés jusqu'à ce qu'ils soient parallèles au sol. Revenez lentement à la position initiale.",
+                "difficulty": 2,
+                "variantes": ["Élévations latérales inclinées", "Élévations latérales à la poulie", "Élévations latérales en buste penché"],
+                "primaryMuscles": ["Deltoides latéraux"],
+                "secondaryMuscles": ["Deltoides antérieurs", "Trapèzes"]
+              },
+              {
+                "id": 9,
+                "name": {
+                  "french": "Leg press",
+                  "english": "Leg press"
+                },
+                "description": "Allongé sur une machine de leg press, placez vos pieds sur la plateforme à la largeur des épaules. Poussez la plateforme vers le haut en étendant les jambes, puis ramenez-la lentement en pliant les genoux.",
+                "difficulty": 3,
+                "variantes": ["Leg press unilatéral", "Leg press à la machine Smith", "Leg press incliné"],
+                "primaryMuscles": ["Quadriceps", "Fessiers"],
+                "secondaryMuscles": ["Ischio-jambiers", "Adducteurs"]
+              },
+              {
+                "id": 10,
+                "name": {
+                  "french": "Shoulder press",
+                  "english": "Shoulder press"
+                },
+                "description": "Assis ou debout, saisissez des haltères ou une barre avec une prise pronation, les bras fléchis et les coudes à la hauteur des épaules. Poussez les poids vers le haut jusqu'à l'extension complète des bras. Revenez lentement à la position initiale.",
+                "difficulty": 3,
+                "variantes": ["Shoulder press à la machine Smith", "Shoulder press assis", "Shoulder press unilatéral"],
+                "primaryMuscles": ["Deltoides", "Triceps"],
+                "secondaryMuscles": ["Trapèzes", "Pectoraux"]
+              },
+              {
+                "id": 11,
+                "name": {
+                  "french": "Fentes",
+                  "english": "Lunges"
+                },
+                "description": "Debout, saisissez des haltères ou une barre sur les trapèzes. Faites un pas en avant et pliez le genou avant jusqu'à ce qu'il forme un angle de 90 degrés. Le genou arrière doit presque toucher le sol. Revenez à la position initiale et répétez avec l'autre jambe.",
+                "difficulty": 3,
+                "variantes": ["Fentes avant", "Fentes arrière", "Fentes latérales"],
+                "primaryMuscles": ["Quadriceps", "Fessiers"],
+                "secondaryMuscles": ["Ischio-jambiers", "Adducteurs"]
+              }
+            ]
+    

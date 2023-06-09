@@ -1,0 +1,63 @@
+[
+      {
+        "id": 1,
+        "name": "Biceps (Biceps brachii)",
+        "desc": "Muscle à deux têtes situé sur la face antérieure du bras, responsable de la flexion et de la supination de l'avant-bras."
+      },
+      {
+        "id": 2,
+        "name": "Triceps (Triceps brachii)",
+        "desc": "Muscle à trois têtes situé sur la face postérieure du bras, responsable de l'extension de l'avant-bras."
+      },
+      {
+        "id": 3,
+        "name": "Deltoïdes (Deltoideus)",
+        "desc": "Muscle triangulaire de l'épaule, responsable de l'abduction, la flexion, l'extension et la rotation du bras."
+      },
+      {
+        "id": 4,
+        "name": "Pectoraux (Pectoralis major)",
+        "desc": "Muscle large situé sur la partie antérieure de la poitrine, responsable de l'adduction et de la rotation du bras."
+      },
+      {
+        "id": 5,
+        "name": "Dorsaux (Latissimus dorsi)",
+        "desc": "Muscle large situé sur la partie postérieure du tronc, responsable de l'extension, l'adduction et la rotation du bras."
+      },
+      {
+        "id": 6,
+        "name": "Trapèzes (Trapezius)",
+        "desc": "Muscle large situé sur la partie supérieure du dos, responsable de l'élévation, la rétraction et la rotation de l'omoplate."
+      },
+      {
+        "id": 7,
+        "name": "Abdominaux (Rectus abdominis)",
+        "desc": "Muscle long et plat situé sur la partie antérieure de l'abdomen, responsable de la flexion du tronc."
+      },
+      {
+        "id": 8,
+        "name": "Obliques (Obliquus externus abdominis)",
+        "desc": "Muscles diagonaux situés sur les côtés de l'abdomen, responsables de la flexion latérale et de la rotation du tronc."
+      },
+      {
+        "id": 9,
+        "name": "Quadriceps (Quadriceps femoris)",
+        "desc": "Groupe de quatre muscles situés sur la face antérieure de la cuisse, responsables de l'extension du genou et de la flexion de la hanche."
+      },
+      {
+        "id": 10,
+        "name": "Ischio-jambiers (Biceps femoris, Semitendinosus, Semimembranosus)",
+        "desc": "Groupe de trois muscles situés sur la face postérieure de la cuisse, responsables de la flexion du genou et de l'extension de la hanche."
+      },
+      {
+        "id": 11,
+        "name": "Mollets (Gastrocnemius et Soleus)",
+        "desc": "Groupe de deux muscles situés sur la partie postérieure du mollet, responsables de la flexion du genou et de la flexion plantaire de la cheville."
+      },
+      {
+        "id": 12,
+        "name": "Tibial antérieur (Tibialis anterior)",
+        "desc": "Muscle situé sur la partie antérieure de la jambe, responsable de la flexion dorsale et de l'inversion de la cheville."
+        }
+    
+]
