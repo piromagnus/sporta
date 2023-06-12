@@ -14,11 +14,11 @@
             5
         ],
         "primaryMuscles": [
-            "Muscle grand pectoral",
-            "Muscle triceps brachial"
+            "pectoral",
+            "triceps"
         ],
         "secondaryMuscles": [
-           "deltoideAnt",
+           "deltoide",
             "denteleAnt"
         ]
     },
@@ -37,12 +37,12 @@
             5
         ],
         "primaryMuscles": [
-            "Muscle grand pectoral",
-            "deltoideAnt",
-            "Muscle triceps brachial"
+            "pectoral",
+            "triceps",
+            "deltoide"
         ],
         "secondaryMuscles": [
-          
+       
             "denteleAnt"
         ]
     },
@@ -61,11 +61,11 @@
             5
         ],
         "primaryMuscles": [
-            "Muscle grand pectoral",
-            "Muscle triceps brachial"
+            "pectoral",
+            "triceps"
         ],
         "secondaryMuscles": [
-           "deltoideAnt",
+           "deltoide",
             "denteleAnt"
         ]
     },
@@ -84,11 +84,11 @@
             5
         ],
         "primaryMuscles": [
-            "Muscle grand pectoral",
-            "Muscle triceps brachial"
+            "pectoral",
+            "triceps"
         ],
         "secondaryMuscles": [
-           "deltoideAnt",
+           "deltoide",
             "denteleAnt"
         ]
     },
@@ -107,12 +107,11 @@
             4
         ],
         "primaryMuscles": [
-            "Muscle grand pectoral",
-            "Muscle triceps brachial"
+            "pectoral",
+            "triceps"
         ],
         "secondaryMuscles": [
-           "deltoideAnt"
-          
+           "deltoide"
         ]
     }
 ]

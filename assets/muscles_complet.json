@@ -47,7 +47,7 @@
      "pectoral" 
     ],
     "muscle" : "Muscle deltoïde",
-    "group": "Epaules"
+    "group": "Épaule"
   },
   {
     "iD" :3,
@@ -73,7 +73,7 @@
 
   {
     "iD" :4,
-    "id": "biceps",
+    "id": "bicepsBrach",
     "name": "Biceps brachial",
     "path" : "assets/musclesImg/bicepsBrachii.gif",
     "englishName": "Biceps brachii",
@@ -251,7 +251,7 @@
     "antagonistId": [
       "extenseursMain"
     ],
-    "group": "Bras"
+    "group": "Avant-Bras"
   },
   {
     "id": "extenseursMain",
@@ -267,7 +267,7 @@
     "antagonistId": [
       "flechisseursMain"
     ],
-    "group": "Bras"
+    "group": "Avant-Bras"
   },
   {
     "id": "brachioradial",
@@ -285,7 +285,7 @@
       "triceps"
     ],
     "muscle" : "Muscle brachial",
-    "group": "Bras"
+    "group": "Avant-Bras"
   },
 
 
@@ -331,7 +331,7 @@
     "antagonistId": [
       "fessiers"
     ],
-    "group": "Jambes"
+    "group": "Cuisse"
   },
  
   {
@@ -345,7 +345,7 @@
     "antagonistId": [
       "ischioJambiers"
     ],
-    "group": "Jambes"
+    "group": "Cuisse"
   },
   {
     "iD": 17,
@@ -358,7 +358,7 @@
     "antagonistId": [
       "quadriceps"
     ],
-    "group": "Jambes"
+    "group": "Cuisse"
   },
   {
     "iD": 18,

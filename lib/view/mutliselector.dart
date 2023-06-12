@@ -1,42 +1,25 @@
 
 
-import 'package:flutter/material.dart' hide BoxDecoration, BoxShadow;
+import 'package:flutter/material.dart'hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
+import 'package:sporta/models/current_seance.dart';
+import 'dart:math';
 
 import '../models/exercice_db.dart';
+import '../models/blocs.dart';
+import '../models/series.dart';
+import '../models/muscle.dart';
+import "package:provider/provider.dart";
 
-
-// Types d'exercices
-enum MuscleGroup {
-  Shoulder,
-  Chest,
-  Back,
-  Biceps,
-  Triceps,
-  Legs,
-  Abs,
-  Cardio,
-  Stretching,
-}
-
-Map<MuscleGroup,String> muscleGroupToStringFr ={
-  MuscleGroup.Shoulder : "Epaules",
-  MuscleGroup.Chest : "Pectoraux",
-  MuscleGroup.Back : "Dos",
-  MuscleGroup.Biceps : "Biceps",
-  MuscleGroup.Triceps : "Triceps",
-  MuscleGroup.Legs : "Jambes",
-  MuscleGroup.Abs : "Abdominaux",
-  MuscleGroup.Cardio : "Cardio",
-  MuscleGroup.Stretching : "Etirements",
-};
 
 class EmptyButton extends StatefulWidget {
   const EmptyButton({super.key,
-      this.exercice,});
+      required this.muscle,
+      required this.onTap});
 
 
-  final Exercice? exercice;
+  final List<MuscleGroup>? muscle;
+  final VoidCallback onTap;
 
   @override
   State<EmptyButton> createState() => _EmptyButtonState();
@@ -49,19 +32,58 @@ class _EmptyButtonState extends State<EmptyButton> {
   @override
   Widget build(BuildContext context) {
 
+    double medWidth = MediaQuery.of(context).size.width*0.25;
+    double medHeight = MediaQuery.of(context).size.height*0.3;
+    medWidth = min(medWidth, medHeight);
+    medHeight = min(medWidth, medHeight);
 
-    Offset distance = isPressed ? Offset(10, 10) : Offset(12, 12);
+    double width = isPressed ? medWidth-10 : medWidth-15;
+    double height = isPressed ? medHeight-10 : medHeight-15;
+
+    Offset distance = isPressed ? Offset(10, 10) : Offset(15, 15);
     double blur = isPressed ? 5 : 5;
 
     return GestureDetector(
-      onTap :() => setState(() => isPressed = !isPressed),
+      onTapDown :(e) => setState(() {isPressed = !isPressed;}),
+      onTapUp: (e) => setState(() => isPressed = !isPressed),
+      onTap : () => widget.onTap(),
     
-    child : Container(
-            width: 200,
-            height: 200,
+    child : 
+    SizedBox(
+      height: medHeight,
+      width: medWidth,
+      child:
+          Stack(
+            alignment: Alignment.center,
+            fit : StackFit.loose,
+            
+            children : [
+            Container(
+              width: width,
+              height : height,
+              padding: EdgeInsets.all(10),
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,),
+                // borderRadius: BorderRadius.circular(50)),
+              // color : Colors.blue,  
+              child : (widget.muscle !=null ) ? Row(children :  widget.muscle!.map((e) =>
+                Expanded(child : Image(image : AssetImage("assets/icons/${e.strName}_color.png")))).toList())
+                : Container()),
+            Container(
+            width: medWidth,
+            height: medHeight,
+            // foregroundDecoration: BoxDecoration(
+            //   image : DecorationImage(
+            //     image: AssetImage("assets/icons/${widget.muscle.strName}.png"),
+            //     fit: BoxFit.fill,
+            // )),
+            // duration : const Duration(milliseconds: 500),
+            // curve: Curves.easeIn,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(30),
-              color: Colors.blueAccent,//.of(context).colorScheme.background,
+              // backgroundBlendMode: BlendMode.darken,
+              borderRadius: BorderRadius.circular(50),
+              color : Colors.transparent,
+              // color: Colors.blueAccent,//.of(context).colorScheme.background,
               boxShadow: [
                 BoxShadow(
                   offset: -distance,
@@ -77,27 +99,139 @@ class _EmptyButtonState extends State<EmptyButton> {
                 ),
               ],
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-              Text("${widget.exercice?.group ?? " "}"),
-              Icon(Icons.add)]),
-          ));
+            child : Icon(Icons.add, size: 100,
+            color: Colors.black54) //Theme.of(context).colorScheme.secondary,)
+            ),
+              
+
+          ],
+          )));
   }
 }
 
 
 
 
+class SelectExerciceDialog extends StatelessWidget {
+  const SelectExerciceDialog({
+    super.key,
+    required this.exerciceDB,
+    required this.muscleGroup,
+    required this.onTap,
+    this.initialExercice });
+
+  final ExerciceDB exerciceDB;
+  final Exercice? initialExercice;
+  final List<MuscleGroup>? muscleGroup;
+  final Function(Exercice?) onTap;
+  @override
+  Widget build(BuildContext context) {
+
+    var body =context.watch<BodyModel>();
+    List<Exercice> liste =[];
+    if (muscleGroup != null) {
+    for (var i in muscleGroup!) {
+     liste.addAll(exerciceDB.getExercicesByMuscleGroup(body,i));
+    }} 
+    else {
+      liste = exerciceDB.allExs;
+    }
+    //TODO sort by favorite + last used
+    // List<Exercice> liste = exerciceDB.getExercicesByMuscleGroup(body,muscleGroup);
+    return Dialog(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+         (initialExercice != null) ?  
+         ListTile(
+          trailing: IconButton(icon: Icon(Icons.delete),
+              onPressed: () { onTap(null);
+                Navigator.pop(context);
+              }),
+          title: Text(initialExercice!.name,
+            textAlign: TextAlign.center,
+            style: Theme.of(context).textTheme.headlineSmall,))
+          : Container(),
+
+          Divider(),
+          SizedBox(height: MediaQuery.of(context).size.height*0.6,
+          child : 
+                  (liste.isNotEmpty) ? ListView.builder(
+        itemCount: liste.length,
+        itemBuilder: (context,index) =>
+        ListTile(
+          title: Text(liste[index].name,
+          textAlign: TextAlign.center,),
+          onTap: () {
+            onTap(liste[index]);
+            Navigator.pop(context);}),
+        ) 
+      : Text("No exercice found"),),
+
+        ]));
+  }
+}
+
+class ExerciceButton extends StatelessWidget {
+  const ExerciceButton({
+    super.key,
+    required this.onPressed,
+    required this.exercice,
+  });
+
+  final VoidCallback onPressed;
+  final Exercice exercice;
+  @override
+  Widget build(BuildContext context) {
+    double medWidth = MediaQuery.of(context).size.width*0.25;
+    double medHeight = MediaQuery.of(context).size.height*0.3;
+    medWidth = min(medWidth, medHeight);
+    medHeight = min(medWidth, medHeight);
+    return SizedBox(
+      height: medHeight,
+      width: medWidth,
+      child : 
+    ElevatedButton(onPressed: onPressed,
+     child: Card(child: 
+     Column(children: [
+      //TODO Icon
+      Text(exercice.name)
+      //TODO Icon du group musculaire en petit avec la difficulté
+      ]),)));
+  }
+}
+
+
 
 class FBSelector extends StatefulWidget {
-  const FBSelector({super.key});
+  const FBSelector({super.key,
+  this.exerciceDB});
+
+  final ExerciceDB? exerciceDB;
 
   @override
   State<FBSelector> createState() => _FBSelectorState();
 }
 
 class _FBSelectorState extends State<FBSelector> {
+
+
+  List<List<MuscleGroup>> _leftMuscle= [
+    [MuscleGroup.Shoulders,MuscleGroup.Chest],
+    [MuscleGroup.Back,MuscleGroup.Arm]];
+
+  List<List<MuscleGroup>> _rightMuscle= [
+    [MuscleGroup.Legs,MuscleGroup.Hip],
+    [MuscleGroup.Abs,MuscleGroup.Hip]];
+
+  List<List<MuscleGroup>?> _bottomMuscle = [null,null,null];
+
+  List<Exercice?> _leftExercice = [null,null];
+  List<Exercice?> _rightExercice = [null,null];
+  List<Exercice?> _bottomExercice = [null,null,null];
+
+
+
   @override
   Widget build(BuildContext context) {
     //the avatar in the middle 
@@ -106,19 +240,102 @@ class _FBSelectorState extends State<FBSelector> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Select your exercices'),
+        actions: [
+          IconButton(icon: Icon(Icons.check),
+          onPressed: () {
+            if (_leftExercice[0] != null && _leftExercice[1] != null 
+            && _rightExercice[0] != null && _rightExercice[1] != null) {
+              var currentSeance = context.read<CurrentExecSeance>();
+              currentSeance
+              ..addExBloc(
+                ExecBloc(
+                  exId: _leftExercice[0]!.id,
+                  series: [ExecSerie()]
+                  ))
+                ..addExBloc(
+                ExecBloc(
+                  exId: _leftExercice[1]!.id,
+                  series: [ExecSerie()]
+                  ))
+                ..addExBloc(
+                ExecBloc(
+                  exId: _rightExercice[0]!.id,
+                  series: [ExecSerie()]
+                  ))
+                ..addExBloc(
+                ExecBloc(
+                  exId: _rightExercice[1]!.id,
+                  series: [ExecSerie()]
+                  ));
+                  if (_bottomExercice[0] != null) {
+                    currentSeance.addExBloc(
+                      ExecBloc(
+                        exId: _bottomExercice[0]!.id,
+                        series: [ExecSerie()]
+                        ));
+                  }
+                  if (_bottomExercice[1] != null) {
+                    currentSeance.addExBloc(
+                      ExecBloc(
+                        exId: _bottomExercice[1]!.id,
+                        series: [ExecSerie()]
+                        ));
+                  }
+                  if (_bottomExercice[2] != null) {
+                    currentSeance.addExBloc(
+                      ExecBloc(
+                        exId: _bottomExercice[2]!.id,
+                        series: [ExecSerie()]
+                        ));
+                  }
+              Navigator.pop(context);
+            }
+            else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: 
+                Text(" Tu dois selectionner 4 exercices pour valider")));
+            }
+            // Navigator.pop(context);
+          })
+        ],
       ),
-      body: Center(
-        child: Row(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: 
+        Column(children : [
+        Expanded(
+          flex : 4,
+          child : Row(
           mainAxisAlignment: MainAxisAlignment.center,
           mainAxisSize: MainAxisSize.max,
           children: <Widget>[
           
           Column(
-            children : [
-              EmptyButton()
-
-            ]
-
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children : 
+            _leftMuscle.map((e) {
+              int index = _leftMuscle.indexOf(e);
+                return (_leftExercice[index]== null)
+                ? EmptyButton(
+                muscle : e,
+                onTap: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  onTap: (exercice) => setState(() => _leftExercice[index] = exercice),
+                )),
+              )
+               :   ExerciceButton(
+                exercice: _leftExercice[index]!,
+                onPressed: () => showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  initialExercice: _leftExercice[index],
+                  onTap: (exercice) => setState(() => _rightExercice[index] = exercice),
+                )),
+              );}).toList()
+              // _leftInd++;
           ),
           
 
@@ -126,7 +343,7 @@ class _FBSelectorState extends State<FBSelector> {
             children: <Widget>[
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.7,
-                width: MediaQuery.of(context).size.width * 0.5,
+                width: MediaQuery.of(context).size.width * 0.45,
                 child: 
               Image(image : AssetImage('assets/body.png'))),
               
@@ -136,11 +353,71 @@ class _FBSelectorState extends State<FBSelector> {
             ],
           ),
           
-          Column(),
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children : 
+            _rightMuscle.map(
+              (e) {
+                int index = _rightMuscle.indexOf(e);
+                // _rightInd++;
+                 return (_rightExercice[index] == null)  
+              ? EmptyButton(
+                muscle : e,
+                onTap: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  onTap: (exercice) => setState(() => _rightExercice[index] = exercice),
+                )),
+              ) 
+              : ExerciceButton(
+                exercice: _rightExercice[index]!,
+                onPressed: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  initialExercice: _rightExercice[index]!,
+                  onTap: (exercice) => setState(() => _rightExercice[index] = exercice),
+                )),
+              );}).toList()
+          ),
           
           ]
-        ),
-      ),
+        )),
+        
+        Expanded(
+          flex : 1,
+          child : Row (
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: 
+        _bottomMuscle.map((e){
+
+          int index = _bottomMuscle.indexOf(e);
+
+          return (_bottomExercice[index] == null)  
+              ? EmptyButton(
+                muscle : e,
+                onTap: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  onTap: (exercice) => setState(() => _bottomExercice[index] = exercice),
+                )),
+              ) 
+              : ExerciceButton(
+                exercice: _bottomExercice[index]!,
+                onPressed: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  initialExercice: _bottomExercice[index]!,
+                  onTap: (exercice) => setState(() => _bottomExercice[index] = exercice),
+                )),
+              );}).toList()
+              )
+        )
+
+      ])),
 
     );
   }

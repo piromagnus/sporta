@@ -122,7 +122,7 @@ class MuscleView extends StatelessWidget{
         children: [
           Text(muscle.name,style:const TextStyle(fontSize: 40)),  
           // const Spacer(),
-          Text(muscle.group,style:const TextStyle(fontSize: 20)),
+          Text(muscle.group.strName,style:const TextStyle(fontSize: 20)),
           const Spacer(),
           Row(children: [
             Expanded(flex: 2, child:  Image.asset(muscle.path ?? 'assets/body.png')),
@@ -175,7 +175,7 @@ class MuscleView extends StatelessWidget{
 class GroupMuscleCard extends StatelessWidget{
   const GroupMuscleCard({super.key, required this.body, required this.group});
   final BodyModel body;
-  final String group;
+  final MuscleGroup group;
   @override
   Widget build(BuildContext context) {
 
@@ -201,7 +201,7 @@ class GroupMuscleCard extends StatelessWidget{
               //     style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               //     textAlign: TextAlign.center,))),
               const Spacer(),
-              Expanded(flex : 7,child : Text(group,style:const TextStyle(fontSize: 20)))
+              Expanded(flex : 7,child : Text(group.strName,style:const TextStyle(fontSize: 20)))
               ])),
           // Text("Muscles : "),
           Expanded(
@@ -292,7 +292,8 @@ class _MuscleFormCreationState extends State<MuscleFormCreation> {
   final _nameController = TextEditingController();
   final _descController = TextEditingController();
   final _idController = TextEditingController();
-  final _groupController = TextEditingController();
+  // final _groupController = TextEditingController();
+  MuscleGroup? _group;
   final _antagonistIdList = <String>[];
   Muscle? _currentMucle;
 
@@ -363,13 +364,14 @@ class _MuscleFormCreationState extends State<MuscleFormCreation> {
         DropdownButtonFormField(
           isExpanded: true,
           decoration: const InputDecoration(labelText: 'Group'),
-          onChanged: (value){if (value!=null) setState(() => _groupController.text = value);},
-          value: (_groupController.text!="") ? _groupController.text : null,
+          onChanged: (value){if (value!=null) setState(() =>_group = value);},
+          value: _group,
+          validator: (value) => value == null ? 'Please select a group' : null,
           items: [
-            for (var group in context.read<BodyModel>().musclesByGroup.keys.toSet())
+            for (var group in MuscleGroup.values)//context.read<BodyModel>().musclesByGroup.keys.toSet())
               DropdownMenuItem(
                 value: group,
-                child: Text(group),
+                child: Text(group.strName),
               ),
           ],
         ),
@@ -429,7 +431,7 @@ class _MuscleFormCreationState extends State<MuscleFormCreation> {
                 Muscle muscle = Muscle(
                   name: _nameController.text,
                   desc: _descController.text,
-                  group : _groupController.text,
+                  group : _group!,
                   id: _idController.text,
                   muscle: "Autre", //TODO : modifier ça.
                   antagonistId: _antagonistIdList,

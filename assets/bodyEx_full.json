@@ -21,12 +21,12 @@
             13
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -52,12 +52,15 @@
             13
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            
+            "pectoralStero",
+            "pectoralAbdo",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "pectoralClav",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -84,12 +87,15 @@
             13
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "pectoralStero",
+            "pectoralClav",
+            "deltoideAnt",
+            "Muscle triceps brachial"
+            
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "pectoralAbdo",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -109,12 +115,12 @@
             6
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -134,12 +140,12 @@
             6
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "deltoideAnt",
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -159,12 +165,12 @@
             5
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -184,12 +190,12 @@
             5
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -211,12 +217,12 @@
             7
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -238,12 +244,12 @@
             7
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -265,12 +271,12 @@
             7
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -292,12 +298,12 @@
             7
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide",
-            "denteleAnt",
+            "deltoideAnt",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -319,13 +325,17 @@
             7
         ],
         "primaryMuscles": [
-            "deltoide",
-            "trapeze",
-            "triceps"
+            "trapezeSup",
+            "trapezeMoy",
+            "deltoideAnt",
+            "deltoideMoy",
+            "Muscle triceps brachial",
+            "pectoralClav"
         ],
         "secondaryMuscles": [
-            "pectoral",
-            "denteleAnt",
+            "pectoralAbdo",
+            "pectoralSterno",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -347,14 +357,15 @@
             7
         ],
         "primaryMuscles": [
-            "deltoide",
-            "trapeze",
-            "triceps",
-            "pectoral"
-        ],
+            "Muscle trapèze",
+            "Muscle deltoïde",
+            "Muscle triceps brachial",
+            "pectoralClav",
+            "pectoralSterno"
+         ],
         "secondaryMuscles": [
-
-            "denteleAnt",
+            "pectoralAbdo",
+            "denteléAnt",
             "droitAbdo"
         ]
     },
@@ -378,7 +389,7 @@
             "ischioJambiers",
             "adducteurs",
             "droitAbdo",
-            "obliques",
+            "oblique",
             "erecteurRachis"
         ]
     },
@@ -396,13 +407,13 @@
         ],
         "primaryMuscles": [
             "fessiers",
-            "quadriceps",
-            "adducteurs"
+            "adducteurs",
+            "quadriceps"
         ],
         "secondaryMuscles": [
             "ischioJambiers",
             "droitAbdo",
-            "obliques",
+            "oblique",
             "erecteurRachis"
         ]
     },
@@ -426,7 +437,7 @@
             "ischioJambiers",
             "adducteurs",
             "droitAbdo",
-            "obliques",
+            "oblique",
             "erecteurRachis"
         ]
     },
@@ -442,16 +453,16 @@
             18, 19, 20
         ],
         "primaryMuscles": [
-            "biceps",
-            "grandDorsal"
+            "Muscle biceps brachial",
+            "Muscle grand dorsal"
 
         ],
         "secondaryMuscles": [
-            "trapeze",
+            "trapezeMoy",
+            "trapezeInf",
             "grandRond",
             "rhomboids",
-            "triceps"
-
+            "tricepsLong"
         ]
     },
     {
@@ -465,14 +476,14 @@
         "variantes" : [
             17, 19, 20
         ],
-        "primaryMuscles": [
-            "biceps",
-            "grandDorsal"
-
+        "primaryMuscles" : [
+            "Muscle biceps brachial",
+            "Muscle grand dorsal"
         ],
-        "secondaryMuscles": [
-            "trapeze",
-            "triceps"
+        "secondaryMuscles" : [
+            "trapezeMoy",
+            "trapezeInf",
+            "tricepsLong"
         ]
 
     },
@@ -487,14 +498,14 @@
         "variantes" : [
             17, 18, 20
         ],
-        "primaryMuscles": [
-            "biceps",
-            "grandDorsal"
-
+        "primaryMuscles" : [
+            "Muscle biceps brachial",
+            "Muscle grand dorsal"
         ],
-        "secondaryMuscles": [
-            "trapeze",
-            "triceps"
+        "secondaryMuscles" : [
+            "trapezeMoy",
+            "trapezeInf",
+            "tricepsLong"
         ]
 
     },
@@ -511,11 +522,11 @@
             22
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide"
+            "deltoideAnt"
         ]
     },
     {
@@ -530,13 +541,12 @@
             20,
             22
         ],
-        "primaryMuscles": [
-            
-            "triceps"
+        "primaryMuscles" : [
+            "Muscle triceps brachial"
         ],
-        "secondaryMuscles": [
-            "pectoral",
-            "deltoide"
+        "secondaryMuscles" : [
+            "Muscle grand pectoral",
+            "deltoideAnt"
         ]
     },
     {
@@ -552,11 +562,11 @@
             21
         ],
         "primaryMuscles": [
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles": [
-            "deltoide"
+            "deltoideAnt"
         ]
     },
     {
@@ -580,7 +590,7 @@
             "ischioJambiers",
             "adducteurs",
             "droitAbdo",
-            "obliques",
+            "oblique",
             "erecteurRachis"
         ]
     },
@@ -600,9 +610,9 @@
             "obliques"
         ],
         "secondaryMuscles" : [
-            "trapeze",
-            "deltoide",
-            "pectoral",
+            "Muscle trapèze",
+            "deltoideAnt",
+            "Muscle grand pectoral",
             "rhomboids",
             "fessiers",
             "quadriceps"
@@ -644,11 +654,11 @@
         "primaryMuscles" : [
             "droitAbdo",
             "obliques",
-            "pectoral",
-            "triceps"
+            "Muscle grand pectoral",
+            "Muscle triceps brachial"
         ],
         "secondaryMuscles" : [
-            "trapeze",
+            "Muscle trapèze",
             "deltoideAnt",
             "rhomboids",
             "erecteurRachis",

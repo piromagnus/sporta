@@ -43,9 +43,16 @@ class QuestDB extends ChangeNotifier{
   void getPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     List<String> questsJson = prefs.getStringList("quests") ?? [];
-    _quests = List<Quest>.from(questsJson.map((e) => Quest.fromJson(json.decode(e))));
+    _quests = questsJson.map((e) => Quest.fromJson(json.decode(e))).toList();
+    notifyListeners();
   }
+  
 
+  void setPreferences() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    List<String> questsJson = _quests.map((e) => json.encode(e.toJson())).toList();
+    prefs.setStringList("quests", questsJson);
+  }
 
 
 

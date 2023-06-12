@@ -15,6 +15,42 @@ import 'history.dart';
 import 'muscle.dart';
 
 
+enum Objectif {
+  habit("Habitude", 
+    description: "Créer une habitude durable de musculation"), // Création d'habitude
+  condition("Condition",
+     description: "Améliorer ma condition physique générale pour être en meilleur santé"), // Condition physique
+  //Premium
+  force("Force"), // Force
+  weight("Masse"), // Prise de Masse
+  cut("Sèche"); // Perte de poids
+
+
+  const  Objectif(this.strName, {this.description});
+  final String strName;
+  final String? description;
+
+  static Objectif? fromString(String? str) {
+    if (str == null) {
+      return null;
+    }
+    else if (str == "Habitude") {
+      return Objectif.habit;
+    } else if (str == "Condition") {
+      return Objectif.condition;
+    } else if (str == "Force") {
+      return Objectif.force;
+    } else if (str == "Masse") {
+      return Objectif.weight;
+    } else if (str == "Sèche") {
+      return Objectif.cut;
+    } else {
+      return null;
+    }
+  }
+}
+
+
 
 
 int levelToXp(int level) => 5*pow(level,2).toInt();
@@ -44,6 +80,10 @@ class Profil extends ChangeNotifier {
   int powerXp =0; // Hypertrophie avec une icon de muscle
   int skillXp = 0; // Connaissance avec une icon de livre
 
+  Objectif objectif = Objectif.habit;
+
+  int coins = 0;
+  int gems = 0;
 
 
   ExercicePersonalDataBase? exPersoDataBase;
@@ -83,6 +123,9 @@ class Profil extends ChangeNotifier {
     "powerXp" : powerXp,
     "skillXp" : skillXp,
     "xpMuscleMap" : xpMuscleMap,
+    "objectif" : objectif.strName,
+    "coins" : coins,
+    "gems" : gems,
     //"history" : history.toJson(),
   };
    
@@ -108,12 +151,14 @@ class Profil extends ChangeNotifier {
         level = level + 1;
         notifyListeners();
       }
+      setPreferences();
     }
   }
   set energy(double value) {
     if (value <= energyMax) {
       _energy = value;
       notifyListeners();
+      setPreferences();
     }
   }
 
@@ -121,6 +166,7 @@ class Profil extends ChangeNotifier {
     level = 1;
     _xp = 0;
     notifyListeners();
+    setPreferences();
   }
 
 
@@ -134,27 +180,28 @@ class Profil extends ChangeNotifier {
       xpMuscleMap = json.decode(jsonString);
     }
     else {
-    String data = await rootBundle.loadString("assets/muscles.json");
-    List<dynamic> jsonList = json.decode(data);
-    //List<Map<String,dynamic>> jsonMap = jsonList.map((e) => Map<String,dynamic>.from(e)).toList();
-    //print(jsonMap.runtimeType);
-    List<Muscle> musclesList= jsonList.map((e) => Muscle.fromJson(e)).toList();
-    
-    List simpleMusclesList = [];
-    for (var muscle in musclesList) {
-      if (simpleMusclesList.contains(muscle.muscle) == false) { 
-        simpleMusclesList.add(muscle.muscle);
-      }
-    }
-    List groupMuscle =[];
-    for (var muscle in musclesList){
-      if (groupMuscle.contains(muscle.group) == false) {
-        groupMuscle.add(muscle.group);
-      }
-    }
+      xpMuscleMap = Map<String,int>.fromIterable(MuscleGroup.values, key: (e) => e.strName, value: (e) => 0);
 
-    xpMuscleMap = Map<String,int>.fromIterable(groupMuscle, key: (e) => e, value: (e) => 0);
-    // xpMuscleMap = Map<String,int>.fromIterable(simpleMusclesList, key: (e) => e, value: (e) => 0);
+    // String data = await rootBundle.loadString("assets/muscles.json");
+    // List<dynamic> jsonList = json.decode(data);
+    // //List<Map<String,dynamic>> jsonMap = jsonList.map((e) => Map<String,dynamic>.from(e)).toList();
+    // //print(jsonMap.runtimeType);
+    // List<Muscle> musclesList= jsonList.map((e) => Muscle.fromJson(e)).toList();
+    
+    // List simpleMusclesList = [];
+    // for (var muscle in musclesList) {
+    //   if (simpleMusclesList.contains(muscle.muscle) == false) { 
+    //     simpleMusclesList.add(muscle.muscle);
+    //   }
+    // }
+    // List groupMuscle =[];
+    // for (var muscle in musclesList){
+    //   if (groupMuscle.contains(muscle.group) == false) {
+    //     groupMuscle.add(muscle.group);
+    //   }
+    // }
+    // xpMuscleMap = Map<String,int>.fromIterable(groupMuscle, key: (e) => e, value: (e) => 0);
+    // // xpMuscleMap = Map<String,int>.fromIterable(simpleMusclesList, key: (e) => e, value: (e) => 0);
     }
   }
 
@@ -164,23 +211,28 @@ class Profil extends ChangeNotifier {
     
     if (profilJson != null) {
       Map<String,dynamic> profilMap = json.decode(profilJson);
-       _pseudo = profilMap["pseudo"];
-        _energy = profilMap["energy"];
-        energyMax = profilMap["energyMax"];
-        age = profilMap["age"];
-        mesurements = Mesurements.fromJson(profilMap["mesurements"]);
-        level = profilMap["level"];
-        attXp = profilMap["attXp"];
-        defXp = profilMap["defXp"];
-        powerXp = profilMap["powerXp"];
-        skillXp = profilMap["skillXp"];
-        _xp = profilMap["xp"];
-        male = profilMap["male"];
+      _pseudo = profilMap["pseudo"];
+      male = profilMap["male"];
+      _energy = profilMap["energy"];
+      energyMax = profilMap["energyMax"];
+      age = profilMap["age"];
+      mesurements = Mesurements.fromJson(json.decode(profilMap["mesurements"]));
+      level = profilMap["level"];
+      attXp = profilMap["attXp"];
+      defXp = profilMap["defXp"];
+      powerXp = profilMap["powerXp"];
+      skillXp = profilMap["skillXp"];
+      _xp = profilMap["xp"];
+      coins = profilMap["coins"];
+      gems = profilMap["gems"];
+      objectif = Objectif.fromString(profilMap["objectif"]) ?? Objectif.habit;
+        
     }
     else {
       _pseudo = "Id${Random().nextInt(1000000).toString()}";
     }
     loadMusclesLevel();
+    notifyListeners();
   }
 
   setPreferences() async {
@@ -231,7 +283,7 @@ class Mesurements {
 
 
 
-  Mesurements.fromJson(dynamic jsonMap)
+  Mesurements.fromJson(Map<String,dynamic> jsonMap)
   : size = jsonMap["size"],
     weight = jsonMap["weight"],
     waist = jsonMap["waist"],

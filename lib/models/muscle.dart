@@ -6,13 +6,53 @@ import 'package:path_provider/path_provider.dart';
 import 'dart:io';
 
 
+enum MuscleGroup {
+  Shoulders("Epaules"),
+  Chest("Torse"),
+  Arm("Bras"),
+  Back("Dos"),
+  Abs("Abdominaux"),
+  Hip("Hanche"),
+  Legs("Jambes");
+  // Cardio,
+  // Stretching,
+  final String strName;
+  final String? path;
+  const MuscleGroup(this.strName, {this.path});
+
+
+  static MuscleGroup fromString(String str) {
+    if (str == "Epaules") {
+      return MuscleGroup.Shoulders;
+    } else if (str == "Torse") {
+      return MuscleGroup.Chest;
+    } else if (str == "Dos") {
+      return MuscleGroup.Back;
+    } else if (str == "Bras") {
+      return MuscleGroup.Arm;
+    } else if (str == "Jambes") {
+      return MuscleGroup.Legs;
+    } else if (str == "Abdominaux") {
+      return MuscleGroup.Abs;
+    } else if (str == "Hanche"){
+      return MuscleGroup.Hip;
+    }
+    else{
+      throw Exception("Unknown muscle group : $str");
+    }
+  }
+}
+
+
+
+
 class Muscle {
 
     final String name;
     final String desc;
     final String? path;
     final List<String> antagonistId;
-    final String group;
+    final MuscleGroup group;
     final String id;
     final String muscle;
     // each muscle class will inherit from this
@@ -33,7 +73,7 @@ class Muscle {
     id = jsonMap["id"],
     muscle = jsonMap["muscle"] ?? "Autre",
     antagonistId = List<String>.from(jsonMap["antagonistId"] ?? []),
-    group = jsonMap["group"];
+    group = MuscleGroup.fromString(jsonMap["group"] as String);
     //this(name: jsonMap["name"], desc: jsonMap["desc"], id: jsonMap["id"]); 
     // a priori pas de problème d'inférence ici.
 
@@ -70,7 +110,7 @@ class Muscle {
 class BodyModel extends ChangeNotifier {
 
   Map<String,Muscle> muscles = {}; // id: muscle
-  Map<String,List<Muscle>> musclesByGroup = {}; // group : [muscle]
+  Map<MuscleGroup,List<Muscle>> musclesByGroup = {}; // group : [muscle]
   BodyModel() {
     loadMuscles();
   }

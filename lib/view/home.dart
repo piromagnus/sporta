@@ -50,8 +50,8 @@ class QuestCard extends StatelessWidget {
 class EnergyJauge extends StatelessWidget {
   const EnergyJauge({
     super.key,
-    required this.energy,
-    required this.energyMax,
+    this.energy = 3,
+    this.energyMax = 3,
   });
 
   final double energy;
@@ -60,7 +60,7 @@ class EnergyJauge extends StatelessWidget {
   Color getColor(double energy, double energyMax) {
     final double ratio = energy / energyMax;
     if (ratio < 0.1) {
-      return Colors.red;
+      return Colors.redAccent;
     } else if (ratio < 0.5) {
       return Colors.orange;
     } else {
@@ -70,30 +70,35 @@ class EnergyJauge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SfLinearGauge(
+    try {
+      return SfLinearGauge(
       minimum: 0,
-      maximum: energyMax+0.5,
+      maximum: energyMax,
       showTicks: false,
       showLabels: false,
       // showAxisTrack: false,
-      axisTrackStyle: const LinearAxisTrackStyle(
+      axisTrackStyle: LinearAxisTrackStyle(
         thickness: 25,
         borderWidth: 3,
         edgeStyle: LinearEdgeStyle.bothCurve,
-        borderColor:Colors.blueGrey,
-        color: Colors.transparent ),
+        borderColor:energy<0.3 ? Colors.red: Colors.blueGrey,
+        color:   Colors.transparent ),
       barPointers: <LinearBarPointer>[
         LinearBarPointer(
-          value: energy+0.5,
+          enableAnimation: false,
+          // animationDuration: 10, //TODO : corriger le bug d'animation
+          value: energy,
           thickness: 26,
           borderWidth: 2,
-          borderColor: energy>2.5 ? Colors.yellowAccent :Colors.transparent,
+          borderColor: energy>2.5 ? Colors.yellowAccent :  Colors.transparent,
           color: getColor(energy, energyMax),
           edgeStyle: LinearEdgeStyle.bothCurve,
           // position: LinearElementPosition.outside,
         ),
       ],
-    );
+    );} catch (e) {
+      return Container();
+    }
   }
 }
 
@@ -181,8 +186,42 @@ class _HomePageState extends State<HomePage> {
       builder: (context,profil,history,child) =>
         Scaffold(
           appBar: AppBar(
-            title: Text('Salut ${profil.pseudo} !'),
-          ),
+            title: Row( children : [ 
+              // const Expanded(
+              //       flex : 1,
+              //       child: Text("Niveau")),
+                  Expanded(
+                    flex:1,
+                    child:
+                    SizedBox(height : MediaQuery.of(context).size.height*0.07,
+                    child:
+                  Tooltip(message : "${profil.xp} XP \nProchain Niveau : ${levelToXp(xpToLevel(profil.xp))} XP",
+                  child : LevelWidget(level: profil.level, xp: profil.xp)))),
+                  const Spacer(flex: 1,),
+                Expanded(
+                    flex : 3,
+                    child:
+                      Tooltip(
+                        message : "Energie  : ${profil.energy} / ${profil.energyMax}",
+                        child : EnergyJauge(
+                      energy: profil.energy,
+                      energyMax: profil.energyMax))),
+
+            //   Expanded(flex : 3,child : Text('${profil.pseudo}',
+            // textAlign: TextAlign.center,)),
+            const Spacer(flex: 1,),
+            Padding(padding : EdgeInsets.all(7),
+              child :  Text("${profil.coins}",)),
+            Image.asset('assets/icons/coin.png',
+              height: 30,width: 30,),
+            const Spacer(flex: 1,),
+             Padding(padding : EdgeInsets.all(5),
+              child :  Text("${profil.gems}")),
+            Image.asset('assets/icons/gem.png',
+              height: 30,width: 30,),
+
+              ],
+          )),
           body: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
@@ -190,22 +229,22 @@ class _HomePageState extends State<HomePage> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    const Spacer(flex: 1,),
-                  const Expanded(
-                    flex : 1,
-                    child: Text("Niveau")),
-                  Expanded(
-                    flex:1,
-                    child:
-                    SizedBox(height : MediaQuery.of(context).size.height*0.1,
-                    child:
-                  LevelWidget(level: profil.level!, xp: profil.xp))),
-                  const Spacer(flex: 1,),
-                  Expanded(
-                    flex : 3,
-                    child:EnergyJauge(
-                  energy: profil.energy,
-                   energyMax: profil.energyMax)),
+                  //   const Spacer(flex: 1,),
+                  // const Expanded(
+                  //   flex : 1,
+                  //   child: Text("Niveau")),
+                  // Expanded(
+                  //   flex:1,
+                  //   child:
+                  //   SizedBox(height : MediaQuery.of(context).size.height*0.1,
+                  //   child:
+                  // LevelWidget(level: profil.level, xp: profil.xp))),
+                  // const Spacer(flex: 1,),
+                  // Expanded(
+                  //   flex : 3,
+                  //   child:EnergyJauge(
+                  //     energy: profil.energy,
+                  //     energyMax: profil.energyMax)),
                   const Spacer(flex: 1,)]
                 ),
                 

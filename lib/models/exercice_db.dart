@@ -7,6 +7,7 @@ import 'requirement.dart';
 
 import 'package:flutter/services.dart' show rootBundle;
 
+import 'muscle.dart';
 
 
 
@@ -77,6 +78,8 @@ class ExerciceDB extends ChangeNotifier {
   Map<String,List<Exercice>> allExsByGroup ={};
   Map<int,Exercice> allExsById ={};
 
+  Map<MuscleGroup,Exercice> allExsByMucleGroup = {};
+
   List<Exercice> get allExs => allExsById.values.toList();
 
   operator [](int? id) => getExById(id);
@@ -102,7 +105,11 @@ class ExerciceDB extends ChangeNotifier {
     List<dynamic> jsonWeightList =json.decode(jsonWeightString) as List;
     jsonWeightList = jsonWeightList.map((e) => 
       Exercice.fromJson(e)).toList();
-    weightExs = Map<int,Exercice>.fromIterables(jsonWeightList.map((e) => e.id),
+    for (Exercice i in jsonWeightList){
+      i.id = i.id + bodyExs.length;
+    }
+    weightExs = Map<int,Exercice>.fromIterables(jsonWeightList.map(
+      (e) => e.id),
       jsonWeightList as List<Exercice>);
 
     // group all exercices by group
@@ -119,11 +126,23 @@ class ExerciceDB extends ChangeNotifier {
     //  = <int,Exercice>{}..addAll(bodyExs)..addAll(weightExs);
     
    allExsById =  Map<int,Exercice>.fromIterables(
-      [...bodyExs.values].map((e) => e.id).toList()..addAll([...weightExs.values].map((e) => e.id+bodyExs.length)),
+      [...bodyExs.values].map((e) => e.id).toList()..addAll([...weightExs.values].map((e) => e.id)),
       [...bodyExs.values,...weightExs.values]);
 
     notifyListeners();
 
+  }
+
+  List<Exercice> getExercicesByMuscleGroup(BodyModel body, MuscleGroup group){
+    List<Exercice> exs = [];
+    for (var ex in allExs){
+      var primMuscle = ex.primaryMusclesId!.map((e) => body.muscles[e]?.group).toList();
+      var secMuscle = ex.secondaryMusclesId!.map((e) => body.muscles[e]?.group).toList();
+      if (primMuscle.contains(group) ){//|| secMuscle.contains(group)){
+        exs.add(ex);
+      }
+    }
+    return exs;
   }
 
 
@@ -209,7 +228,9 @@ class Exercice extends Object {
       primaryMusclesId = List.from(jsonMap["primaryMuscles"] ?? []),
       secondaryMusclesId = List.from(jsonMap["secondaryMuscles"] ?? []);   
       
-    
+    set id (int id) => id = id;
+
+
     Map<String,dynamic> toJson()=> {
       "name" : name,
       "description" : desc,

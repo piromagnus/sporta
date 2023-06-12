@@ -96,7 +96,7 @@ class _EndPageState extends State<EndPage> {
                 flex : 2,
               child: Text("Vous avez fait ${currentSeance.length} exercices différents"
                " avec un total de ${currentSeance.data.reps} reps"
-               "\nVous avez soulevé ${currentSeance.data.volume(exDB,profil.mesurements!.weight)} kilos !!"
+               "\nVous avez soulevé ${currentSeance.data.volume(exDB,profil.mesurements.weight)} kilos !!"
             " \n\nVous pouvez maintenant modifier le type de séance"
               " \net notez l'intensité ressenti lors de la séance",
               textAlign : TextAlign.center, ),
@@ -854,7 +854,7 @@ class _ExecSeancePageState extends State<ExecSeancePage> {
               ElevatedButton(
               onPressed: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => 
-                FBSelector())
+                FBSelector(exerciceDB: widget.exercices,))
               ), //Multiselector
               child: const Text("Ajouter plusieurs exercices"))])//const Icon(Icons.grid_view)),
 

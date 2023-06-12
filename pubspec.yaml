@@ -78,6 +78,7 @@ flutter:
     - assets/bodyEx.json
     - assets/weightEx.json
     - assets/musclesImg/
+    - assets/icons/
 
   #   - images/a_dot_ham.jpeg
 

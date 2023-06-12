@@ -6,6 +6,7 @@ import 'package:sporta/widgets/buttons.dart';
 import 'package:provider/provider.dart';
 import 'package:sporta/models/muscle.dart';
 import 'level.dart';
+import 'package:sporta/models/profil.dart';
 
 
 class ProfilPage extends StatefulWidget {
@@ -62,9 +63,16 @@ class _ProfilPageState extends State<ProfilPage> {
                 children: [
                   Expanded(
                     flex:2,
-                    child: 
-                  Image.asset("assets/body.png",height: MediaQuery.of(context).size.height*0.7,)
-                  ),
+                    child: Column(mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children : [
+                  Container(
+                    margin: const EdgeInsets.all(10),
+                    child: Text("${context.read<Profil>().pseudo}",
+                  style: const TextStyle( fontSize: 30, color: Colors.black,
+                    fontWeight: FontWeight.bold ))), // bold
+                  
+                  Image.asset("assets/body.png",height: MediaQuery.of(context).size.height*0.67,)
+                ])),
                   Expanded(child:
                      Column(
                       

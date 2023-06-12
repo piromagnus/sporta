@@ -3,6 +3,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:sporta/models/muscle.dart';
 import 'package:sporta/models/profil.dart';
 import 'package:syncfusion_flutter_gauges/gauges.dart';
 
@@ -53,10 +54,12 @@ class XpJauge extends StatelessWidget {
 class CaraTile extends StatelessWidget {
   const CaraTile({super.key,
   required this.xp,
-  required this.child});
+  required this.child,
+  required this.message});
 
   final int xp;
   final Widget child;
+  final String? message;
 
   @override
   Widget build(BuildContext context) {
@@ -67,13 +70,29 @@ class CaraTile extends StatelessWidget {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children : [
-            Expanded(flex : 2,child : child),
-            Expanded(child : Text(':')),
-            Text('${xpToLevel(xp)} '),
-            Expanded(flex: 3, child : XpJauge(xp:xp)),
-            Text(
+            Expanded(flex : 3,child : Tooltip(message : message ,child : child)),
+            const Expanded(flex : 1, child : Text(':')),
+            Expanded(
+              flex : 3,
+              child : Container(
+              margin : const EdgeInsets.all(4),
+              padding: const EdgeInsets.all(5),
+              decoration : BoxDecoration(
+                shape : BoxShape.circle,
+                color : Theme.of(context).primaryColor
+                // border: Border.all(
+                //   color: Theme.of(context).primaryColor,
+                //   width: 5,
+                // ),
+                // borderRadius: BorderRadius.circular(10),
+              ),
+              child : Text('${xpToLevel(xp)} ',
+              style : TextStyle(fontSize: 20, color : Colors.white),
+              textAlign: TextAlign.center,))),
+            Expanded(flex: 5, child : XpJauge(xp:xp)),
+            Expanded(child: Text(
               ' ${xpToLevel(xp)+1}',
-              textAlign: TextAlign.center,),
+              textAlign: TextAlign.center,)),
               
           ]
           // style: const TextStyle(color: Colors.white),
@@ -102,20 +121,33 @@ class _LevelPageState extends State<LevelPage> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             
-                for (var muscle in profil.musclesLevel!.keys)
+              
+                  CaraTile(xp: profil.attXp, 
+                    message : "Attaque (Force)",
+                    child: Image.asset("assets/icons/sword.png",
+                      width: 30, height: 30,)),
+                  CaraTile(xp: profil.powerXp, 
+                    message : "Pouvoir (Masse Musculaire)",
+                    child: Image.asset("assets/icons/strong.png",
+                      width: 30, height: 30,)),
+                  CaraTile(xp: profil.defXp,
+                    message : "Défense (Endurance)",
+                    child:Image.asset("assets/icons/shield.png",
+                      width: 30, height: 30,),),
+               
+                CaraTile(xp: profil.skillXp, 
+                  message : "Compétence (Connaissance)",
+                  child:  Image.asset("assets/icons/book.png",
+                    width: 30, height: 30,)),
+               
+                for (var muscle in MuscleGroup.values)
 
-                CaraTile(xp: profil.musclesLevel![muscle]!, 
-                  child: Text('$muscle : ',
-                        textAlign: TextAlign.center) //TODO : icons
+                CaraTile(xp: profil.musclesLevel![muscle.strName]!, 
+                message : muscle.strName,
+                  child: Image.asset("assets/icons/${muscle.strName}_color.png",
+                      width: 30, height: 30,)
                       ),
                     
-              
-                  CaraTile(xp: profil.attXp, child: const Icon(Icons.add)),
-                  CaraTile(xp: profil.powerXp, child: const Icon(Icons.sports_mma)),
-                  CaraTile(xp: profil.defXp, child: Icon(Icons.shield),),
-               
-                CaraTile(xp: profil.skillXp, child:       Icon(Icons.menu_book)),
-               
                   
           ],
         ),
