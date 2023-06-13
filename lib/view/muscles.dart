@@ -94,7 +94,7 @@ class MuscleTile extends StatelessWidget {
       child: 
     ListTile(
       title: Text(muscle!.name, textAlign: TextAlign.center,),
-      subtitle: showGroup ? Text("Groupe : ${muscle!.group}") : null,
+      subtitle: showGroup ? Text("Groupe : ${muscle!.group.strName}") : null,
       onTap: () { if (poped) {Navigator.of(context).pop("muscleView");}
         showDialog(context: context, builder: ((context) => 
         Dialog(
@@ -120,12 +120,15 @@ class MuscleView extends StatelessWidget{
       height: MediaQuery.of(context).size.height*.9,
       child: Column(
         children: [
-          Text(muscle.name,style:const TextStyle(fontSize: 40)),  
+          Text(muscle.name,
+          textAlign: TextAlign.center,
+          style:const TextStyle(fontSize: 35)),  
           // const Spacer(),
           Text(muscle.group.strName,style:const TextStyle(fontSize: 20)),
           const Spacer(),
           Row(children: [
-            Expanded(flex: 2, child:  Image.asset(muscle.path ?? 'assets/body.png')),
+            Expanded(flex: 2, child:  Image.asset(muscle.path ?? 'assets/body.png', 
+                height: MediaQuery.of(context).size.height*0.4 ,)),
             Expanded(flex: 3, child: Container(margin:const EdgeInsets.all(20),child:Text(muscle.desc,softWrap: true,)))
             ]),
             const Spacer(),
@@ -181,16 +184,13 @@ class GroupMuscleCard extends StatelessWidget{
 
     return Container(
       margin: const EdgeInsets.all(2),
-      child: Card(child: 
+      child: Card(child : 
+        Padding(padding: EdgeInsets.all(5),
+        child: 
         Column(children: [
           Expanded(child :Row(
             children :[ 
-              Expanded(
-                flex : 2,
-                child : 
-                MuscleLevelWidget(
-                  xp : context.select((Profil value) => value.musclesLevel![group]!)
-                  )),
+              Expanded(flex: 2, child : Image.asset("assets/icons/${group.strName}_color.png")),
               // Container(
               //   decoration: BoxDecoration(
               //     shape: BoxShape.circle,
@@ -200,8 +200,17 @@ class GroupMuscleCard extends StatelessWidget{
               //     Text("${context.select((Profil value) => value.musclesLevel![group])}",
               //     style: TextStyle(color: Theme.of(context).colorScheme.onPrimary),
               //     textAlign: TextAlign.center,))),
-              const Spacer(),
-              Expanded(flex : 7,child : Text(group.strName,style:const TextStyle(fontSize: 20)))
+              // const Spacer(),
+              Expanded(flex : 7,child : Text(group.strName,
+              textAlign: TextAlign.center,
+              style:const TextStyle(fontSize: 20))),
+              // const Spacer(),
+               Expanded(
+                flex : 2,
+                child : 
+                MuscleLevelWidget(
+                  xp : context.select((Profil value) => value.musclesLevel![group.strName]!)
+                  )),
               ])),
           // Text("Muscles : "),
           Expanded(
@@ -216,7 +225,7 @@ class GroupMuscleCard extends StatelessWidget{
            )
         ],)
       ),
-    );
+    ));
   }
 }
 

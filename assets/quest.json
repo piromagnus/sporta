@@ -1,113 +1,306 @@
-    [
-        {
-          "name": "L'Aventurier des Tutoriels",
-          "description": "Brave le tutoriel et découvre les secrets de l'application.",
-          "reward": "10 pièces"
-        },
-        {
-          "name": "L'Architecte de l'Effort",
-          "description": "Construis ta première séance guidée, pierre par pierre.",
-          "reward": "Débloque 2 exercices"
-        },
-        {
-          "name": "Le Maître du Temps",
-          "description": "Ajoute une séance à ton calendrier et contrôle le temps lui-même.",
-          "reward": "15 gemmes"
-        },
-        {
-          "name": "Le Guerrier de l'Agenda",
-          "description": "Réalise une séance planifiée et montre à ton calendrier qui est le boss.",
-          "reward": "Débloque 1 template de séance"
-        },
-        {
-          "name": "L'Indiana Jones de l'Anatomie",
-          "description": "Explore la page d'anatomie à la recherche de connaissances perdues.",
-          "reward": "20 pièces"
-        },
-        {
-          "name": "Le Champion de la Bi-Session",
-          "description": "Fais deux séances en une semaine et double ton pouvoir.",
-          "reward": "25 gemmes"
-        },
-        {
-          "name": "Le Héraut des Haltères",
-          "description": "Soulève au moins 1000kg en une séance et défie les lois de la gravité.",
-          "reward": "Débloque 1 fonctionnalité"
-        },
-        {
-          "name": "L'Endurant de l'Exercice",
-          "description": "Fais une séance de plus d'une heure et montre à ton corps qui est le maître.",
-          "reward": "30 pièces"
-        },
-        {
-          "name": "Le Détective des Dips",
-          "description": "Débloque 10 exercices et élargis ton arsenal d'entraînement.",
-          "reward": "35 gemmes"
-        },
-        {
-          "name": "Le Quintessence de la Consistance",
-          "description": "Fais 5 séances et prouve que la persévérance est la clé.",
-          "reward": "40 pièces"
-        },
-        {
-          "name": "Le Dragon des Donjons",
-          "description": "Fais le premier Donjon et deviens une légende.",
-          "reward": "Débloque 3 exercices"
-        },
-        {
-          "name": "L'Oracle des Objectifs",
-          "description": "Choisis un objectif et trace ta propre voie vers la victoire.",
-          "reward": "45 gemmes"
-        },
-            {
-          "name": "Le Savant des Supersets",
-          "description": "Réalise un superset pour la première fois et débloque le pouvoir des exercices combinés.",
-          "reward": "Débloque 2 exercices avancés"
-        },
-        {
-          "name": "Le Triomphateur des Trois",
-          "description": "Termine trois séances différentes dans la même journée et prouve ton endurance.",
-          "reward": "50 gemmes"
-        },
-        {
-          "name": "Le Gardien de la Consistance",
-          "description": "Entraîne-toi tous les jours pendant une semaine entière sans manquer une seule journée.",
-          "reward": "Débloque une fonctionnalité premium"
-        },
-        {
-          "name": "Le Pionnier des PRs",
-          "description": "Bats ton record personnel dans n'importe quel exercice et défie tes propres limites.",
-          "reward": "60 pièces"
-        },
-        {
-          "name": "Le Conquérant des Calories",
-          "description": "Brûle 1000 calories en une seule séance et fais fondre tes adversaires.",
-          "reward": "65 gemmes"
-        },
-        {
-          "name": "Le Voyageur de la Variété",
-          "description": "Fais 10 exercices différents dans la même séance et prouve ta polyvalence.",
-          "reward": "Débloque un template de séance avancé"
-        },
-        {
-          "name": "Le Titan du Temps",
-          "description": "Enregistre 24 heures d'entraînement au total et deviens un titan du temps.",
-          "reward": "70 pièces"
-        },
-        {
-          "name": "L'Érudit de l'Exercice",
-          "description": "Lis 10 descriptions d'exercices différents et enrichis ta connaissance de l'entraînement.",
-          "reward": "75 gemmes"
-        },
-        {
-          "name": "Le Champion des Challenges",
-          "description": "Complète tous les défis disponibles en une semaine et prouve que tu es un véritable champion.",
-          "reward": "Débloque 3 exercices exclusifs"
-        },
-        {
-          "name": "L'Ascendant de l'Activité",
-          "description": "Atteins le niveau 10 en activité globale et montre à tous ton dévouement.",
-          "reward": "80 pièces"
-        }
-      
+[
+  {
+    "name": "L'Aventurier des Tutoriels",
+    "description": "Brave le tutoriel et découvre les secrets de l'application.",
+    "reward": [{
+      "type": "coins",
+      "value": 10
+    }],
+    "generalState": "complete",
+    "type" : "tutorial",
+    "nextQuest": [
+      "L'Architecte de l'Effort",
+     "L'Oracle des Objectifs"]
+  },
+  {
+    "name": "L'Oracle des Objectifs",
+    "description": "Choisis un objectif et trace ta propre voie vers la victoire.",
+    "reward": [{
+      "type": "gems",
+      "value": 45
+    }],
+    "type" : "tutorial",
+    "generalState": "complete",
+    "nextQuest" : [ 
+      "Le Maître des Mesures"
+    ]
+  },
+  {
+    "name": "L'Architecte de l'Effort",
+    "description": "Construis ta première séance guidée, pierre par pierre.",
+    "reward": [{
+      "type": "exercises",
+      "value": 2
+    }],
+    "type" : "tutorial",
+    "generalState": "unlocked",
+    "nextQuest": [
+      "Le Maître du Temps"
+    ]
+  },
+  {
+    "name": "Le Maître des Mesures",
+    "description": "Ajoute tes mensurations et transforme-toi en scientifique du fitness ! Suis ton évolution et découvre les secrets de ton propre corps.",
+    "reward": [{
+      "type" : "coins",
+      "value" : 15
+    }],
+    "type" : "principal",
+    "generalState" : "locked"
+  },
+  {
+    "name": "Le Maître du Temps",
+    "description": "Ajoute une séance à ton calendrier et contrôle le temps lui-même.",
+    "reward": [{
+      "type": "gems",
+      "value": 15
+    }],
+    "type" : "tutorial",
+    "generalState": "locked",
+    "nextQuest": [
+      "Le Guerrier de l'Agenda",
+      "L'Indiana Jones de l'Anatomie"
+    ]
+  },
+  {
+    "name": "Le Guerrier de l'Agenda",
+    "description": "Réalise une séance planifiée et montre à ton calendrier qui est le boss.",
+    "reward": [{
+      "type": "template",
+      "value": 1
+    }],
+    "type" : "tutorial",
+    "nextQuest": [
+      "Le Champion de la Bi-Session",
+      "Le Héraut des Haltères",
+      "Le Quintessence de la Consistance"
+    ]
+  },
+  {
+    "name": "Le Quintessence de la Consistance",
+    "description": "Fais 5 séances et prouve que la persévérance est la clé.",
+    "reward": [{
+      "type": "coins",
+      "value": 40
+    }],
+    "generalState": "locked",
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 5
+    },
+    "type" : "tutorial",
+    "nextQuest": [
+      "Le Premier des Donjons"
+    ]
+  },
+  {
+    "name": "Le Premier des Donjons",
+    "description": "Fais le premier Donjon et deviens une légende.",
+    "reward": [{
+      "type": "premium",
+      "value": 7
+    }],
+    "type" : "donjon",
+    "generalState": "locked",
+    "nextQuest": [
+      "Le Savant des Supersets"
+    ]
+  },
+
+  {
+    "name": "L'Indiana Jones de l'Anatomie",
+    "description": "Explore la page d'anatomie à la recherche de connaissances perdues.",
+    "reward": [{
+      "type": "coins",
+      "value": 20
+    }],
+    "generalState": "locked"
+  },
+  {
+    "name": "Le Champion de la Bi-Session",
+    "description": "Fais deux séances en une semaine.",
+    "reward": [{
+      "type": "gems",
+      "value": 25
+    }],
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 2
+    },
+    "generalState": "locked",
+    "nextQuest": [
+      "Le Triomphateur des Trois"
+    ]
+ 
+
+ },
+  {
+    "name": "Le Triomphateur des Trois",
+    "description": "Termine trois séances différentes dans la même semaine et prouve ton endurance.",
+    "reward": [{
+      "type": "gems",
+      "value": 50
+    }],
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 3
+    },
+    "generalState": "locked",
+    "nextQuest": [
+     "Le Gardien de la Consistance"
+    ]
+  },
+  {
+    "name": "Le Gardien de la Consistance",
+    "description": "Entraîne-toi tous les jours pendant une semaine entière sans manquer une seule journée.",
+    "reward": [{
+      "type": "premium",
+      "value": 7
+    }],
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 7
+    },
+    "generalState": "locked"
+  },
+  {
+    "name": "Le Héraut des Haltères",
+    "description": "Soulève au moins 1000kg en une séance et défie les lois de la gravité.",
+    "reward": [{
+      "type": "gems",
+      "value": 20
+    }],
+    "generalState": "locked",
+    "nextQuest": [
+      "L'Endurant de l'Exercice"
+    ]
+  },
+  {
+    "name": "L'Endurant de l'Exercice",
+    "description": "Fais une séance de plus d'une heure et montre à ton corps qui est le maître.",
+    "reward": [{
+      "type": "coins",
+      "value": 30
+    }],
+    "generalState" :"locked",
+    "nextQuest" : [
+      "L'Érudit de l'Exercice"
+    ]
+  },
+  {
+    "name": "L'Érudit de l'Exercice",
+    "description": "Lis 10 descriptions d'exercices différents et enrichis ta connaissance de l'entraînement.",
+    "reward": [{
+      "type": "gems",
+      "value": 75
+    }],
+    "generalState" :"locked",
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 10
+    },
+    "nextQuest" : [
+      "Le Détective des Dips"
+    ]
+  },
+  {
+    "name": "Le Détective des Dips",
+    "description": "Débloque 10 exercices et élargis ton arsenal d'entraînement.",
+    "reward": [{
+      "type": "gems",
+      "value": 35
+    }],
+    "generalState": "locked",
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 10
+    },
+    "nextQuest": [
+      "Le Voyageur de la Variété"
+    ]
+  },
+  {
+    "name": "Le Voyageur de la Variété",
+    "description": "Fais 10 exercices différents dans la même séance et prouve ta polyvalence.",
+    "reward": [{
+      "type": "template",
+      "value": 1
+    }],
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 10
+    },
+    "generalState": "locked",
+    "nextQuest": [
+      "Le Titan du Temps"
+    ]
+  },
+  {
+    "name": "Le Titan du Temps",
+    "description": "Enregistre 24 heures d'entraînement au total.",
+    "reward": [{
+      "type": "coins",
+      "value": 70
+    }],
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 24
+    },
+    "generalState": "locked",
+    "nextQuest": [
+     "Le Pionnier des PRs"
+    ]
+  },
+  {
+    "name": "Le Pionnier des PRs",
+    "description": "Bats ton record personnel dans n'importe quel exercice et défie tes propres limites.",
+    "reward": [{
+      "type": "coins",
+      "value": 60
+    }],
+    "generalState": "locked"
+  },
+
+  {
+    "name": "Le Savant des Supersets",
+    "description": "Réalise un superset pour la première fois et débloque le pouvoir des exercices combinés.",
+    "reward": [{
+      "type": "exercises",
+      "value": 2
+    }],
+    "generalState": "locked",
+    "nextQuest": [
+      "Le Champion des Challenges"
+    ]
+
+  },
+  {
+    "name": "Le Champion des Challenges",
+    "description": "Complète tous les défis disponibles en une semaine et prouve que tu es un véritable champion.",
+    "reward": [{
+      "type": "exercises",
+      "value": 3
+    }],
+    "generalState": "locked",
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 7
+    },
+    "nextQuest": [
+      "L'Ascendant de l'Activité"
+    ]
+  },
+  {
+    "name": "L'Ascendant de l'Activité",
+    "description": "Atteins le niveau 10 en activité globale et montre à tous ton dévouement.",
+    "reward": [{
+      "type": "coins",
+      "value": 80
+    }],
+    "generalState": "locked",
+    "generalProgression" : {
+      "value" : 0,
+      "maximum" : 10
+    }
+  }
 ]

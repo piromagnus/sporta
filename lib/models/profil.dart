@@ -203,9 +203,10 @@ class Profil extends ChangeNotifier {
     // xpMuscleMap = Map<String,int>.fromIterable(groupMuscle, key: (e) => e, value: (e) => 0);
     // // xpMuscleMap = Map<String,int>.fromIterable(simpleMusclesList, key: (e) => e, value: (e) => 0);
     }
+    // print(xpMuscleMap);
   }
 
-  getPreferences() async {
+  Future getPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     var profilJson = prefs.getString("profil");
     

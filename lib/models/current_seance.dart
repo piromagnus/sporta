@@ -233,7 +233,7 @@ class CurrentExecSeance extends ChangeNotifier {
   );
   bool actif = false;
 
-  getPreferences() async {
+  Future getPreferences() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     try {
       String? json = prefs.getString("currentExecSeance");

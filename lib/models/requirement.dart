@@ -4,25 +4,10 @@
 import 'dart:convert';
 // import 'dart:collection';
 
+import 'quest.dart';
 
 
 
-
-enum QuestState {
-  locked("locked"),
-  unlocked("unlocked"),
-  inProgress("inProgress"),
-  complete("complete");
-  const QuestState(this.strName);
-  final String strName;
-  }
-
-Map<String,QuestState> strToQuestState = {
-  "locked" : QuestState.locked,
-  "unlocked" : QuestState.unlocked,
-  "inProgress" : QuestState.inProgress,
-  "complete" : QuestState.complete
-};
 
 
 
@@ -78,7 +63,7 @@ class Requirement {
   id = jsonMap["id"],
   desc = jsonMap["desc"],
   progression = Progression.fromJson(json.decode(jsonMap["progression"])),
-  fullfilled = strToQuestState[jsonMap["fullfilled"]] ?? QuestState.locked;
+  fullfilled = QuestState.strToQuestState(jsonMap["fullfilled"] ?? "locked");
 
   Map<String,dynamic> toJson() => {
     "name" : name,

@@ -112,7 +112,7 @@ class BodyModel extends ChangeNotifier {
   Map<String,Muscle> muscles = {}; // id: muscle
   Map<MuscleGroup,List<Muscle>> musclesByGroup = {}; // group : [muscle]
   BodyModel() {
-    loadMuscles();
+    // loadMuscles();
   }
 
   List<Muscle> get musclesList => muscles.values.toList();
