@@ -141,9 +141,13 @@ class BodyModel extends ChangeNotifier {
       //jsonMap.map((e) => {e["id"] as int :Muscle.fromJson(e)}));
     final directory = await getApplicationDocumentsDirectory();
     final file = File('${directory.path}/muscles.json');
-    final customData = await file.readAsString();
+    try { final customData = await file.readAsString();
     List<dynamic> customList = json.decode(customData) ?? [];
     muscles.addAll(Map.fromIterable(customList.map((e) => {e["id"]:Muscle.fromJson(e)})));
+    }
+    catch (e) {
+      print("No custom file found");
+    }
     notifyListeners();
 
   }

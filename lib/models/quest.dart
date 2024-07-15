@@ -76,6 +76,11 @@ class QuestDB extends ChangeNotifier with Iterable<Quest> {
   Quest operator [](int index) => _quests[index];
   operator []=(int index, Quest value) => _quests[index] = value;
 
+  List<Quest> get unlockedQuests =>
+    _quests.where(
+      (element) => element.generalState == QuestState.unlocked)
+      .toList();
+
   @override
   Iterator<Quest> get iterator => _quests.iterator;
 

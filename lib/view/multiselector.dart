@@ -2,14 +2,19 @@
 
 import 'package:flutter/material.dart'hide BoxDecoration, BoxShadow;
 import 'package:flutter_inset_box_shadow/flutter_inset_box_shadow.dart';
-import 'package:sporta/models/current_seance.dart';
+
 import 'dart:math';
+import "package:provider/provider.dart";
+
 
 import '../models/exercice_db.dart';
 import '../models/blocs.dart';
 import '../models/series.dart';
 import '../models/muscle.dart';
-import "package:provider/provider.dart";
+import '../models/history.dart';
+import 'package:sporta/models/current_seance.dart';
+
+import 'package:sporta/view/seance_templates.dart';
 
 
 class EmptyButton extends StatefulWidget {
@@ -187,17 +192,33 @@ class ExerciceButton extends StatelessWidget {
     double medHeight = MediaQuery.of(context).size.height*0.3;
     medWidth = min(medWidth, medHeight);
     medHeight = min(medWidth, medHeight);
-    return SizedBox(
+    return Container(
       height: medHeight,
       width: medWidth,
+      color : Colors.transparent,
       child : 
     ElevatedButton(onPressed: onPressed,
-     child: Card(child: 
-     Column(children: [
+    style: ElevatedButton.styleFrom(
+      shape: CircleBorder(),
+      foregroundColor: Colors.transparent,
+      backgroundColor: Colors.transparent,
+      shadowColor: Colors.transparent,
+
+      elevation: 0,
+      padding: EdgeInsets.all(0),
+      ),
+     child: Expanded(child : Card(
+      margin: EdgeInsets.all(5),
+      elevation: 20,
+      shape : CircleBorder(),
+      child: 
+     Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
       //TODO Icon
-      Text(exercice.name)
+      Text(exercice.name,textAlign: TextAlign.center,)
       //TODO Icon du group musculaire en petit avec la difficulté
-      ]),)));
+      ]),))));
   }
 }
 
@@ -205,9 +226,11 @@ class ExerciceButton extends StatelessWidget {
 
 class FBSelector extends StatefulWidget {
   const FBSelector({super.key,
-  this.exerciceDB});
+  this.exerciceDB,
+  required this.type});
 
   final ExerciceDB? exerciceDB;
+  final String type;
 
   @override
   State<FBSelector> createState() => _FBSelectorState();
@@ -224,7 +247,7 @@ class _FBSelectorState extends State<FBSelector> {
     [MuscleGroup.Legs,MuscleGroup.Hip],
     [MuscleGroup.Abs,MuscleGroup.Hip]];
 
-  List<List<MuscleGroup>?> _bottomMuscle = [null,null,null];
+  List<List<int>?> _bottomMuscle = [[0],[1],[2]];
 
   List<Exercice?> _leftExercice = [null,null];
   List<Exercice?> _rightExercice = [null,null];
@@ -245,6 +268,7 @@ class _FBSelectorState extends State<FBSelector> {
           onPressed: () {
             if (_leftExercice[0] != null && _leftExercice[1] != null 
             && _rightExercice[0] != null && _rightExercice[1] != null) {
+              
               var currentSeance = context.read<CurrentExecSeance>();
               currentSeance
               ..addExBloc(
@@ -396,11 +420,11 @@ class _FBSelectorState extends State<FBSelector> {
 
           return (_bottomExercice[index] == null)  
               ? EmptyButton(
-                muscle : e,
+                muscle : null,
                 onTap: ()=> showDialog(context: context, builder: (context) =>
                 SelectExerciceDialog(
                   exerciceDB: widget.exerciceDB!,
-                  muscleGroup: e,
+                  muscleGroup: null,
                   onTap: (exercice) => setState(() => _bottomExercice[index] = exercice),
                 )),
               ) 
@@ -409,7 +433,243 @@ class _FBSelectorState extends State<FBSelector> {
                 onPressed: ()=> showDialog(context: context, builder: (context) =>
                 SelectExerciceDialog(
                   exerciceDB: widget.exerciceDB!,
+                  muscleGroup: null,
+                  initialExercice: _bottomExercice[index]!,
+                  onTap: (exercice) => setState(() => _bottomExercice[index] = exercice),
+                )),
+              );}).toList()
+              )
+        )
+
+      ])),
+
+    );
+  }
+}
+
+class TemplateFBSelector extends StatefulWidget {
+  const TemplateFBSelector({super.key,
+  this.exerciceDB,
+  required this.type});
+
+  final ExerciceDB? exerciceDB;
+  final String type;
+
+  @override
+  State<TemplateFBSelector> createState() => _TemplateFBSelectorState();
+}
+
+class _TemplateFBSelectorState extends State<TemplateFBSelector> {
+
+
+  List<List<MuscleGroup>> _leftMuscle= [
+    [MuscleGroup.Shoulders,MuscleGroup.Chest],
+    [MuscleGroup.Back,MuscleGroup.Arm]];
+
+  List<List<MuscleGroup>> _rightMuscle= [
+    [MuscleGroup.Legs,MuscleGroup.Hip],
+    [MuscleGroup.Abs,MuscleGroup.Hip]];
+
+  List<List<int>?> _bottomMuscle = [[0],[1],[2]];
+
+  List<Exercice?> _leftExercice = [null,null];
+  List<Exercice?> _rightExercice = [null,null];
+  List<Exercice?> _bottomExercice = [null,null,null];
+
+
+
+  @override
+  Widget build(BuildContext context) {
+    //the avatar in the middle 
+    //and buttons on the sides for adding exercices for each group
+
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Select your exercices'),
+        actions: [
+          IconButton(icon: Icon(Icons.check),
+          onPressed: () {
+            if (_leftExercice[0] != null && _leftExercice[1] != null 
+            && _rightExercice[0] != null && _rightExercice[1] != null) {
+              
+              var currentSeance = context.read<CurrentTemplateSeance>();
+              currentSeance
+              ..addExBloc(
+                TemplateBloc(
+                  exId: _leftExercice[0]!.id,
+                  series: [TemplateSerie()]
+                  ))
+                ..addExBloc(
+                TemplateBloc(
+                  exId: _leftExercice[1]!.id,
+                  series: [TemplateSerie()]
+                  ))
+                ..addExBloc(
+                TemplateBloc(
+                  exId: _rightExercice[0]!.id,
+                  series: [TemplateSerie()]
+                  ))
+                ..addExBloc(
+                TemplateBloc(
+                  exId: _rightExercice[1]!.id,
+                  series: [TemplateSerie()]
+                  ));
+                  if (_bottomExercice[0] != null) {
+                    currentSeance.addExBloc(
+                      TemplateBloc(
+                        exId: _bottomExercice[0]!.id,
+                        series: [TemplateSerie()]
+                        ));
+                  }
+                  if (_bottomExercice[1] != null) {
+                    currentSeance.addExBloc(
+                      TemplateBloc(
+                        exId: _bottomExercice[1]!.id,
+                        series: [TemplateSerie()]
+                        ));
+                  }
+                  if (_bottomExercice[2] != null) {
+                    currentSeance.addExBloc(
+                      TemplateBloc(
+                        exId: _bottomExercice[2]!.id,
+                        series: [TemplateSerie()]
+                        ));
+                  }
+              Navigator.pop(context);
+              Navigator.of(context).push(MaterialPageRoute(
+                                builder: ((context) => 
+                                Consumer3<HistoryModel,
+                                        BodyModel, ExerciceDB>(
+                                    builder: (context, history, body, exercices,
+                                            child) =>
+                                        TemplateCreatorPage(
+                                            history: history,
+                                            body: body,
+                                            exercices: exercices)
+
+                                            )))
+                                            );
+            }
+            else {
+              ScaffoldMessenger.of(context).showSnackBar(
+                SnackBar(content: 
+                Text(" Tu dois selectionner 4 exercices pour valider")));
+            }
+            // Navigator.pop(context);
+          })
+        ],
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: 
+        Column(children : [
+        Expanded(
+          flex : 4,
+          child : Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+          
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children : 
+            _leftMuscle.map((e) {
+              int index = _leftMuscle.indexOf(e);
+                return (_leftExercice[index]== null)
+                ? EmptyButton(
+                muscle : e,
+                onTap: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
                   muscleGroup: e,
+                  onTap: (exercice) => setState(() => _leftExercice[index] = exercice),
+                )),
+              )
+               :   ExerciceButton(
+                exercice: _leftExercice[index]!,
+                onPressed: () => showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  initialExercice: _leftExercice[index],
+                  onTap: (exercice) => setState(() => _rightExercice[index] = exercice),
+                )),
+              );}).toList()
+              // _leftInd++;
+          ),
+          
+
+          Column(
+            children: <Widget>[
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.7,
+                width: MediaQuery.of(context).size.width * 0.45,
+                child: 
+              Image(image : AssetImage('assets/body.png'))),
+              
+              // Text('Shoulder'),
+              // Text('Exercices'),
+              // Text('here'),
+            ],
+          ),
+          
+          Column(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children : 
+            _rightMuscle.map(
+              (e) {
+                int index = _rightMuscle.indexOf(e);
+                // _rightInd++;
+                 return (_rightExercice[index] == null)  
+              ? EmptyButton(
+                muscle : e,
+                onTap: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  onTap: (exercice) => setState(() => _rightExercice[index] = exercice),
+                )),
+              ) 
+              : ExerciceButton(
+                exercice: _rightExercice[index]!,
+                onPressed: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: e,
+                  initialExercice: _rightExercice[index]!,
+                  onTap: (exercice) => setState(() => _rightExercice[index] = exercice),
+                )),
+              );}).toList()
+          ),
+          
+          ]
+        )),
+        
+        Expanded(
+          flex : 1,
+          child : Row (
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          children: 
+        _bottomMuscle.map((e){
+
+          int index = _bottomMuscle.indexOf(e);
+
+          return (_bottomExercice[index] == null)  
+              ? EmptyButton(
+                muscle : null,
+                onTap: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: null,
+                  onTap: (exercice) => setState(() => _bottomExercice[index] = exercice),
+                )),
+              ) 
+              : ExerciceButton(
+                exercice: _bottomExercice[index]!,
+                onPressed: ()=> showDialog(context: context, builder: (context) =>
+                SelectExerciceDialog(
+                  exerciceDB: widget.exerciceDB!,
+                  muscleGroup: null,
                   initialExercice: _bottomExercice[index]!,
                   onTap: (exercice) => setState(() => _bottomExercice[index] = exercice),
                 )),

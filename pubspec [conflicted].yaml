@@ -49,6 +49,7 @@ dependencies:
   syncfusion_flutter_gauges: ^21.2.8
   flutter_inset_box_shadow : ^1.0.7
   graphview: ^1.2.0
+  flutter_bloc: ^7.3.0
 
 dev_dependencies:
   flutter_test:

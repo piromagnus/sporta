@@ -21,7 +21,7 @@ import 'package:sporta/models/profil.dart';
 
 
 import 'package:sporta/view/exercices.dart';
-import 'mutliselector.dart';
+import 'multiselector.dart';
 
 
 
@@ -854,7 +854,8 @@ class _ExecSeancePageState extends State<ExecSeancePage> {
               ElevatedButton(
               onPressed: () => Navigator.push(context,
                 MaterialPageRoute(builder: (context) => 
-                FBSelector(exerciceDB: widget.exercices,))
+                FBSelector(exerciceDB: widget.exercices,
+                type : "execution"))
               ), //Multiselector
               child: const Text("Ajouter plusieurs exercices"))])//const Icon(Icons.grid_view)),
 

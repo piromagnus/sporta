@@ -16,6 +16,7 @@ import 'package:sporta/models/current_seance.dart';
 import 'package:sporta/widgets/dialog.dart';
 import 'package:sporta/view/exercices.dart';
 import 'package:sporta/widgets/text.dart';
+import 'package:sporta/view/multiselector.dart';
 
 
 
@@ -472,14 +473,9 @@ class _TemplateCreatorPageState extends State<TemplateCreatorPage> {
      
       body:    
       Container(margin: const EdgeInsets.all(20),
-        // padding: const EdgeInsets.all(50),
         child:
       ListView(children: [
          Column(children: [
-          // Row(children : [
-          // Expanded(
-          //     flex : 3,
-          //     child: 
               DropdownButton<SeanceType>(
                
             value: _type,
@@ -500,22 +496,7 @@ class _TemplateCreatorPageState extends State<TemplateCreatorPage> {
             }).toList(),
           ),
           // ),
-          // const Spacer(flex: 1,),
-          //TODO en faire un menu qui s'ouvre
-          // const Text("Intensité de la séance : "),
-          // Expanded(
-          //   flex : 5,
-          //   child: SizedBox(
-          //       height: MediaQuery.of(context).size.height * 0.15,
-          //       child:
-          //       IntensitySlider(
-          //         sliderHeight: 20,
-          //     intensity: _intensity,
-          //     onChanged: ((value) => setState((){ _intensity = value; 
-          //     currentSeance.intensity = value;})),
-          //   ))),
-          // ]),
-
+        
           // const Text("Notes permanentes : "), //TODO : modifiable qu'avec un bouton de modif
           NotesField(
           hintText: "Notes permanentes de la séance",
@@ -523,16 +504,7 @@ class _TemplateCreatorPageState extends State<TemplateCreatorPage> {
           onChanged: (value) => setState(() {
            currentSeance.permNotes =  value;
          })),
-          
-          // const Text("Notes : "), //TODO : modifiable tout le temps ou alors que à la fin ? 
-          // TextField(
-          //   decoration: const InputDecoration(
-          //     hintText: "Notes",
-          //     border: OutlineInputBorder(),
-          //   ),
-          //   controller: _notesC,
-          //   onChanged: (value) => currentSeance.notes = _notesC.text,
-          // ),
+        
         ]),
           ListView.builder(
             shrinkWrap: true,
@@ -560,7 +532,10 @@ class _TemplateCreatorPageState extends State<TemplateCreatorPage> {
             child: const Text("Ajouter un exercice"),
           ),
           ElevatedButton(
-          onPressed: () => null, //Multiselector
+          onPressed: () => Navigator.push(context,
+                MaterialPageRoute(builder: (context) => 
+                FBSelector(exerciceDB: widget.exercices,
+                type : "template"))),
           child: const Text("Ajouter plusieurs exercices"))]),
           //const Icon(Icons.grid_view)),
          SizedBox(height: MediaQuery.of(context).size.height * 0.2,),

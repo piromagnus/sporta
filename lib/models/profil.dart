@@ -172,7 +172,7 @@ class Profil extends ChangeNotifier {
 
   
 
-  loadMusclesLevel() async {
+  Future loadMusclesLevel() async {
     // load the shared preferences "musclesLevel"
     SharedPreferences prefs = await SharedPreferences.getInstance();
     String? jsonString = prefs.getString("musclesLevel");

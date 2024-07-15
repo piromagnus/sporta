@@ -56,12 +56,15 @@ Map<String, SeanceType> stringFrToSeanceType = {
 
 class SeanceDB extends ChangeNotifier {
   SeanceDB() {
-    getPreferences();
+    // getPreferences();
   }
 
   List<TemplateTrackedSeance> _seances = [];
 
   List<TemplateTrackedSeance> get seances => _seances;
+
+  List<TemplateTrackedSeance> get completeSeances =>
+      _seances.where((element) => element.complete).toList();
 
   void add(TemplateTrackedSeance seance) {
     _seances.add(seance.copy());
@@ -273,6 +276,7 @@ class TemplateTrackedSeance extends TrackedSeance {
       );
 
   get length => exerciceBlocs.length;
+
 
   double volume(ExerciceDB exDB, double? bodyWeight  ) {
     // on gère pas le poids du corps

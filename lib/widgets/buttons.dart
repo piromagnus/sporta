@@ -43,7 +43,12 @@ class ActionButton extends StatelessWidget {
                           backgroundColor: MaterialStatePropertyAll<Color>(Colors.amber),
                           shape: MaterialStatePropertyAll<OutlinedBorder>(RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))))
               ),
-              child: Text(title,textAlign: TextAlign.center,),
+              child: Text(title,textAlign: TextAlign.center,
+              style: const TextStyle(
+                color: Colors.black,
+                fontSize: 12,
+                fontWeight: FontWeight.bold
+              ),),
   ),
           );
   }
